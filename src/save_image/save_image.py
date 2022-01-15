@@ -21,7 +21,7 @@ def to_excel(
 
     ## Parameters
     * :param image: Your image loaded as a `PIL.Image` object;
-    * :param path: The absolute path that you want to save your output file.
+    * :param path: The path that you want to save your output file.
     Example: `/home/user/Documents/my_image.xlsx`;
     * :param lower_image_size_by: A factor that the function will divide
     your image's dimensions by. Defaults to `10`;
@@ -40,6 +40,8 @@ def to_excel(
     ## Return
     * :return: `None`, but outputs a `.xlsx` file on the given `path`.
     """
+    image = image.convert("RGB")
+
     # Resizing image
     image = image.resize(
         (image.size[0] // lower_image_size_by, image.size[1] // lower_image_size_by)
@@ -99,7 +101,7 @@ def to_minecraft(
 
     ## Parameters
     * :param image: Your image loaded as a `PIL.Image` object;
-    * :param path: The absolute path that you want to save your datapack.
+    * :param path: The path that you want to save your datapack.
     Example: `/home/user/Documents/my_image_datapack`;
     * :param lower_image_size_by: A factor that the function will divide
     your image's dimensions by. Defaults to `10`;
@@ -108,6 +110,8 @@ def to_minecraft(
     ## Return
     * :return: `None`, but outputs a datapack on the given `path`.
     """
+    image = image.convert("RGB")
+
     # Makes the commands that the datapack will run when loaded
     def script(df, **kwargs):
         player_pos = [
