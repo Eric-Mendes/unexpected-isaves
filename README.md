@@ -8,7 +8,7 @@ With this package you can save any image opened with the [`PIL.Image` module](ht
 - Spreadsheet;
 - Minecraft Pixel Art Datapack.
 
-## How to use it
+## How to use it :computer:
 First you install it in your environment like so
 ```bash
 pip install unexpected_isaves
