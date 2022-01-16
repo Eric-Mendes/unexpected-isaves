@@ -8,6 +8,8 @@ With this package you can save any image opened with the [`PIL.Image` module](ht
 - Spreadsheet;
 - Minecraft Pixel Art Datapack.
 
+You can also manipulate your image with the functions available at the `image_utilities` module.
+
 ## How to use it :computer:
 First you install it in your environment like so
 ```bash
