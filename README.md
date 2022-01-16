@@ -11,7 +11,7 @@ With this package you can save any image opened with the [`PIL.Image` module](ht
 ## How to use it :computer:
 First you install it in your environment like so
 ```bash
-pip install unexpected_isaves
+pip install unexpected-isaves
 ```
 Then you can start using it already! Open any image you've got locally with PIL and try to save it using our functions!
 ```python
