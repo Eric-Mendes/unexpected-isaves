@@ -90,7 +90,7 @@ def to_minecraft(
     image: Image,
     path: str,
     lower_image_size_by: int = 10,
-    player_pos: Tuple[int] = (0, 0, 0),
+    player_pos: Tuple[int, int, int] = (0, 0, 0),
 ) -> None:
     """
     - Added on release 0.0.1;
