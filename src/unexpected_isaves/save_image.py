@@ -34,7 +34,7 @@ def to_excel(
     * :param row_height (`float`): the rows' height. Defaults to `15`;
     * :param column_width (`float`): the columns' width. Defaults to `2.3`;
        * The default values on `row_height` and `column_width` were specifically thought out so that they make the cells squared, however - as any hardcoded value - they might not do the trick on your device. That is when you might want to tweak them a little bit.
-    * :param delete_cell_value(`bool`): wheter to keep or not the text corresponding to that color. Defaults to `True`;
+    * :param delete_cell_value (`bool`): wheter to keep or not the text corresponding to that color. Defaults to `True`;
     * :param zoom_scale (`int`): how much to zoom in or out on the spreadsheet. Defaults to `20` which seems to be the default max zoom out on most spreadsheet softwares.
 
     ## Return
