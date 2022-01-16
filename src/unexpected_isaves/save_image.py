@@ -86,7 +86,6 @@ def to_excel(
     wb.save(path)
 
 
-
 def to_minecraft(
     image: Image,
     path: str,
@@ -525,6 +524,3 @@ def to_minecraft(
     res = min([a, b], key=len)
     with open(f"{path}/data/pixelart-map/functions/load.mcfunction", "w") as file:
         file.write("\n".join(res))
-
-
-
