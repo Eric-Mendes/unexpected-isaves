@@ -25,7 +25,6 @@ def fit_to_palette(image: Image, palette: List[RGBColor]) -> Image:
         curr_color, curr_smallest_dist = palette[0], euclidean_distance(pixel, palette[0])
 
         for col in palette[1:]:
-            print(col)
             dist = euclidean_distance(pixel, col)
             if dist < curr_smallest_dist:
                 curr_smallest_dist = dist
