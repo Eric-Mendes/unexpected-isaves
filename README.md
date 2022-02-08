@@ -1,4 +1,6 @@
 # Unexpected Image Saves
+[![PyPI version](https://badge.fury.io/py/unexpected-isaves.svg)](https://badge.fury.io/py/unexpected-isaves)
+
 Unconventional ways to save an image :smile:
 
 Have you ever been bored by the same old `.png`, `.jpg`, `.jpeg`, `.gif` and all other image extensions? Have you ever wanted something different - goofy - but also clever? Then this is the package for you! :sparkles:
