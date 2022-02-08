@@ -9,7 +9,9 @@ It's because of people like you that the arts made with this tool keep getting b
 - You can file issues to report bugs, ask for enhancements or give our contributors a brand new idea on how to expand this project.
   - When opening a new issue, make sure that you follow the guidelines on how to do so;
 - You can contribute with your really nice piece of code that will solve a bug, implement an enhancement or implement a brand new feature. 
-You can also contribute with documentation (this is much appreciated, btw). To do so, please follow the instructions below.
+- You can also contribute with documentation (this is much appreciated, btw). 
+
+To do so, please follow the instructions below.
 
 ## Gitflow
 Whenever you want to contribute with code - whatever code it is - please make sure that you follow these rules (the same follows for documentation):
