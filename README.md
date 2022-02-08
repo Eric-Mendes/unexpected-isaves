@@ -1,5 +1,8 @@
 # Unexpected Image Saves
 [![PyPI version](https://badge.fury.io/py/unexpected-isaves.svg)](https://badge.fury.io/py/unexpected-isaves)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/unexpected-isaves)](https://pypi.org/project/unexpected-isaves/)
+[![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/Eric-Mendes/unexpected-isaves/blob/main/LICENSE)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 Unconventional ways to save an image :smile:
 
