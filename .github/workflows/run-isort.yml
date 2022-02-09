@@ -1,0 +1,17 @@
+name: Run isort through files
+
+on: push
+
+jobs:
+  run-isort:
+    name: Run isort through all files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      
+      - name: python-isort
+        uses: isort/isort-action@v0.1.0
