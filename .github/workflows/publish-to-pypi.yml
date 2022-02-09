@@ -1,13 +1,12 @@
-name: Publish Python 🐍 distributions 📦 to TestPyPI
+name: Publish Python 🐍 distributions 📦 to PyPI
 
-on: 
-  push:
-    branches:
-      - main
+on:
+  release:
+    types: [published]
 
 jobs:
-  build-n-publish-to-test-pypi:
-    name: Publish Python 🐍 distributions 📦 to TestPyPI
+  build-n-publish-to-pypi:
+    name: Publish Python 🐍 distributions 📦 to PyPI
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -31,9 +30,7 @@ jobs:
           --outdir dist/
           .
       
-      - name: Publish distribution 📦 to Test PyPI
+      - name: Publish distribution 📦 to PyPI
         uses: pypa/gh-action-pypi-publish@master
         with:
-          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-          repository_url: https://test.pypi.org/legacy/
-          skip_existing: true
+          password: ${{ secrets.PYPI_API_TOKEN }}
