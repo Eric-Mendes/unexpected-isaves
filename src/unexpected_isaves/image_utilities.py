@@ -1,5 +1,6 @@
+from functools import wraps
 from math import sqrt
-from typing import List, NewType, Tuple
+from typing import Callable, List, NewType, Tuple
 
 import numpy as np
 from matplotlib import cm
@@ -8,6 +9,16 @@ from PIL import Image
 RGBColor = NewType("RGBColor", Tuple[int, int, int])
 
 
+def _deprecated(fn: Callable):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        print(
+            f"WARNING - DeprecationWarning: the function {fn.__name__} is deprecated."
+        )
+        return fn
+    return wrapper
+
+@_deprecated
 def fit_to_palette(image: Image, palette: List[RGBColor]) -> Image:
     """
     - Added on release 0.0.3;
