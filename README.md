@@ -31,7 +31,7 @@ save_image.to_excel(
 ```
 
 ## Why unexpected-isaves?
-You might be wondering: why would I ever need such a useless lib? The answer is: you wouldn't. This lib was created for learning purposes, and it was never my intention to make it useful. It might be a nice way impress your friends on your Minecraft server, or to make an important presentation lighter with a fun spreadsheet art, though. Be creative!
+You might be wondering: why would I ever need such a useless lib? The answer is: you wouldn't. This lib was created for learning purposes, and it was never my intention to make it useful. It might be a nice way to impress your friends on your Minecraft server, or to make an important presentation lighter with a fun spreadsheet art, though. Be creative!
 
 ## Contributing :pencil:
 Just like Minecraft, everything's better when shared and built together.
