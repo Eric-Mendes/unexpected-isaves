@@ -14,7 +14,7 @@ With this package you can save any image opened with the [`PIL.Image` module](ht
 - Minecraft Pixel Art Datapack.
 
 ## How to use it :computer:
-First you install it in your environment like so
+First you install it in your environment like this
 ```bash
 pip install unexpected-isaves
 ```
@@ -30,7 +30,12 @@ save_image.to_excel(
 )
 ```
 
+## Why unexpected-isaves?
+You might be wondering: why would I ever need such a useless lib? The answer is: you wouldn't. This lib was created for learning purposes, and it was never my intention to make it useful. It might be a nice way impress your friends on your Minecraft server, or to make an important presentation lighter with a fun spreadsheet art, though. Be creative!
+
 ## Contributing :pencil:
+Just like Minecraft, everything's better when shared and built together.
+
 Contributions are welcome and appreciated. Make sure to read our [guide for contributing](https://github.com/Eric-Mendes/unexpected_isaves/blob/main/CONTRIBUTING.md) and don't forget to check out our [code of conduct](https://github.com/Eric-Mendes/unexpected_isaves/blob/main/CODE_OF_CONDUCT.md).
 
 Have fun!
