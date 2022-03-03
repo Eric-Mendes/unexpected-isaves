@@ -143,247 +143,247 @@ def to_minecraft(
     # and maps the pixels to the blocks
     blocks = [
         {
-            "rgb": ["127", "178", "56"],
+            "rgb": (127, 178, 56),
             "blocks": "minecraft:grass_block, minecraft:slime_block",
         },
         {
-            "rgb": ["247", "233", "163"],
+            "rgb": (247, 233, 163),
             "blocks": "minecraft:sand, minecraft:birch_planks, minecraft:birch_log[axis=y], minecraft:stripped_birch_log[axis=x], minecraft:birch_wood, minecraft:stripped_birch_wood, minecraft:birch_sign, minecraft:birch_pressure_plate, minecraft:birch_trapdoor, minecraft:birch_stairs, minecraft:birch_slab, minecraft:birch_fence_gate, minecraft:birch_fence, minecraft:birch_door, minecraft:sandstone, minecraft:glowstone, minecraft:end_stone, minecraft:end_stone_brick_slab, minecraft:end_stone_brick_stairs, minecraft:end_stone_brick_wall, minecraft:bone_block, minecraft:turtle_egg, minecraft:scaffolding, minecraft:candle",
         },
         {
-            "rgb": ["199", "199", "199"],
+            "rgb": (199, 199, 199),
             "blocks": "minecraft:mushroom_stem, minecraft:cobweb, minecraft:white_bed[part=head], minecraft:white_candle",
         },
         {
-            "rgb": ["255", "0", "0"],
+            "rgb": (255, 0, 0),
             "blocks": "minecraft:redstone_block, minecraft:tnt, minecraft:lava, minecraft:fire",
         },
         {
-            "rgb": ["160", "160", "255"],
+            "rgb": (160, 160, 255),
             "blocks": "minecraft:ice, minecraft:frosted_ice, minecraft:packed_ice, minecraft:blue_ice",
         },
         {
-            "rgb": ["167", "167", "167"],
+            "rgb": (167, 167, 167),
             "blocks": "minecraft:iron_block, minecraft:iron_door, minecraft:brewing_stand, minecraft:heavy_weighted_pressure_plate, minecraft:iron_trapdoor, minecraft:lantern, minecraft:anvil, minecraft:grindstone, minecraft:soul_lantern, minecraft:lodestone",
         },
         {
-            "rgb": ["0", "124", "0"],
+            "rgb": (0, 124, 0),
             "blocks": "minecraft:oak_sapling, minecraft:spruce_sapling, minecraft:birch_sapling, minecraft:jungle_sapling, minecraft:acacia_sapling, minecraft:dark_oak_sapling, minecraft:dandelion, minecraft:poppy, minecraft:blue_orchid, minecraft:allium, minecraft:azure_bluet, minecraft:red_tulip, minecraft:orange_tulip, minecraft:white_tulip, minecraft:pink_tulip, minecraft:oxeye_daisy, minecraft:cornflower, minecraft:lily_of_the_valley, minecraft:wither_rose, minecraft:sunflower, minecraft:lilac, minecraft:rose_bush, minecraft:peony, minecraft:wheat[age=7], minecraft:sugar_cane[age=9], minecraft:pumpkin_stem[age=7], minecraft:melon_stem[age=7], minecraft:lily_pad, minecraft:cocoa[age=2], minecraft:carrots[age=7], minecraft:potatoes[age=7], minecraft:beetroots[age=7], minecraft:sweet_berry_bush[age=3], minecraft:grass, minecraft:fern, minecraft:vine, minecraft:oak_leaves, minecraft:spruce_leaves, minecraft:birch_leaves, minecraft:jungle_leaves, minecraft:acacia_leaves, minecraft:dark_oak_leaves, minecraft:azalea_leaves, minecraft:flowering_azalea_leaves, minecraft:cactus[age=9], minecraft:bamboo[age=1], minecraft:cave_vines, minecraft:spore_blossom, minecraft:flowering_azalea, minecraft:big_dripleaf, minecraft:small_dripleaf",
         },
         {
-            "rgb": ["255", "255", "255"],
+            "rgb": (255, 255, 255),
             "blocks": "minecraft:snow, minecraft:snow_block, minecraft:white_bed[part=foot], minecraft:white_wool, minecraft:white_stained_glass, minecraft:white_carpet, minecraft:white_shulker_box, minecraft:white_glazed_terracotta, minecraft:white_concrete, minecraft:white_concrete_powder, minecraft:powder_snow",
         },
         {
-            "rgb": ["164", "168", "184"],
+            "rgb": (164, 168, 184),
             "blocks": "minecraft:clay, minecraft:infested_chiseled_stone_bricks, minecraft:infested_cobblestone, minecraft:infested_cracked_stone_bricks, minecraft:infested_mossy_stone_bricks, minecraft:infested_stone, minecraft:infested_stone_bricks",
         },
         {
-            "rgb": ["151", "109", "77"],
+            "rgb": (151, 109, 77),
             "blocks": "minecraft:coarse_dirt, minecraft:dirt, minecraft:farmland, minecraft:dirt_path, minecraft:granite_slab, minecraft:granite_stairs, minecraft:granite_wall, minecraft:polished_granite_slab, minecraft:polished_granite_stairs, minecraft:jungle_planks, minecraft:jungle_log[axis=y], minecraft:stripped_jungle_log[axis=x], minecraft:jungle_wood, minecraft:stripped_jungle_wood, minecraft:jungle_sign, minecraft:jungle_pressure_plate, minecraft:jungle_trapdoor, minecraft:jungle_stairs, minecraft:jungle_slab, minecraft:jungle_fence_gate, minecraft:jungle_fence, minecraft:jungle_door, minecraft:jukebox, minecraft:brown_mushroom_block, minecraft:rooted_dirt, minecraft:hanging_roots",
         },
         {
-            "rgb": ["112", "112", "112"],
+            "rgb": (112, 112, 112),
             "blocks": "minecraft:stone, minecraft:stone_slab, minecraft:stone_stairs, minecraft:andesite_slab, minecraft:andesite_stairs, minecraft:andesite_wall, minecraft:polished_andesite_slab, minecraft:polished_andesite_stairs, minecraft:cobblestone_slab, minecraft:cobblestone_stairs, minecraft:cobblestone_wall, minecraft:bedrock, minecraft:gold_ore, minecraft:iron_ore, minecraft:coal_ore, minecraft:lapis_lazuli_ore, minecraft:dispenser, minecraft:mossy_cobblestone_slab, minecraft:mossy_cobblestone_stairs, minecraft:mossy_cobblestone_wall, minecraft:spawner, minecraft:diamond_ore, minecraft:furnace, minecraft:stone_pressure_plate, minecraft:redstone_ore, minecraft:stone_bricks, minecraft:emerald_ore, minecraft:ender_chest, minecraft:dropper, minecraft:smooth_stone_slab, minecraft:observer, minecraft:smoker, minecraft:blast_furnace, minecraft:stonecutter, minecraft:sticky_piston, minecraft:piston, minecraft:piston_head, minecraft:gravel, minecraft:acacia_log[axis=z], minecraft:cauldron, minecraft:hopper, minecraft:copper_ore",
         },
         {
-            "rgb": ["64", "64", "255"],
+            "rgb": (64, 64, 255),
             "blocks": "minecraft:water, minecraft:kelp, minecraft:seagrass, minecraft:bubble_column",
         },
         {
-            "rgb": ["143", "119", "72"],
+            "rgb": (143, 119, 72),
             "blocks": "minecraft:oak_planks, minecraft:oak_log[axis=y], minecraft:stripped_oak_log[axis=x], minecraft:oak_wood, minecraft:stripped_oak_wood, minecraft:oak_sign, minecraft:oak_pressure_plate, minecraft:oak_trapdoor, minecraft:oak_stairs, minecraft:oak_slab, minecraft:oak_fence_gate, minecraft:oak_fence, minecraft:oak_door, minecraft:note_block, minecraft:bookshelf, minecraft:chest, minecraft:crafting_table, minecraft:trapped_chest, minecraft:daylight_detector, minecraft:loom, minecraft:barrel, minecraft:cartography_table, minecraft:fletching_table, minecraft:lectern, minecraft:smithing_table, minecraft:composter, minecraft:bamboo_sapling, minecraft:dead_bush, minecraft:petrified_oak_slab, minecraft:beehive, minecraft:white_banner",
         },
         {
-            "rgb": ["255", "252", "245"],
+            "rgb": (255, 252, 245),
             "blocks": "minecraft:quartz_block, minecraft:diorite_stairs, minecraft:diorite_slab, minecraft:diorite_wall, minecraft:polished_diorite_stairs, minecraft:polished_diorite_slab, minecraft:birch_log[axis=x], minecraft:sea_lantern, minecraft:target",
         },
         {
-            "rgb": ["216", "127", "51"],
+            "rgb": (216, 127, 51),
             "blocks": "minecraft:acacia_planks, minecraft:acacia_log[axis=y], minecraft:stripped_acacia_log[axis=x], minecraft:acacia_wood, minecraft:stripped_acacia_wood, minecraft:acacia_sign, minecraft:acacia_pressure_plate, minecraft:acacia_trapdoor, minecraft:acacia_stairs, minecraft:acacia_slab, minecraft:acacia_fence_gate, minecraft:acacia_fence, minecraft:acacia_door, minecraft:red_sand, minecraft:orange_wool, minecraft:orange_carpet, minecraft:orange_shulker_box, minecraft:orange_bed[part=foot], minecraft:orange_stained_glass, minecraft:orange_glazed_terracotta, minecraft:orange_concrete, minecraft:orange_concrete_powder, minecraft:orange_candle, minecraft:pumpkin, minecraft:carved_pumpkin, minecraft:jack_o_lantern, minecraft:terracotta, minecraft:red_sandstone, minecraft:honey_block, minecraft:honeycomb_block, minecraft:copper_block, minecraft:lightning_rod, minecraft:raw_copper_block",
         },
         {
-            "rgb": ["178", "76", "216"],
+            "rgb": (178, 76, 216),
             "blocks": "minecraft:magenta_wool, minecraft:magenta_carpet, minecraft:magenta_shulker_box, minecraft:magenta_bed[part=foot], minecraft:magenta_stained_glass, minecraft:magenta_glazed_terracotta, minecraft:magenta_concrete, minecraft:magenta_concrete_powder, minecraft:magenta_candle, minecraft:purpur_block",
         },
         {
-            "rgb": ["102", "153", "216"],
+            "rgb": (102, 153, 216),
             "blocks": "minecraft:light_blue_wool, minecraft:light_blue_carpet, minecraft:light_blue_shulker_box, minecraft:light_blue_bed[part=foot], minecraft:light_blue_stained_glass, minecraft:light_blue_glazed_terracotta, minecraft:light_blue_concrete, minecraft:light_blue_concrete_powder, minecraft:light_blue_candle, minecraft:soul_fire",
         },
         {
-            "rgb": ["229", "229", "51"],
+            "rgb": (229, 229, 51),
             "blocks": "minecraft:sponge, minecraft:wet_sponge, minecraft:yellow_wool, minecraft:yellow_carpet, minecraft:yellow_shulker_box, minecraft:yellow_bed[part=foot], minecraft:yellow_stained_glass, minecraft:yellow_glazed_terracotta, minecraft:yellow_concrete, minecraft:yellow_concrete_powder, minecraft:yellow_candle, minecraft:hay_bale, minecraft:horn_coral_block[waterlogged=true], minecraft:bee_nest",
         },
         {
-            "rgb": ["127", "204", "25"],
+            "rgb": (127, 204, 25),
             "blocks": "minecraft:lime_wool, minecraft:lime_carpet, minecraft:lime_shulker_box, minecraft:lime_bed[part=foot], minecraft:lime_stained_glass, minecraft:lime_glazed_terracotta, minecraft:lime_concrete, minecraft:lime_concrete_powder, minecraft:lime_candle, minecraft:melon",
         },
         {
-            "rgb": ["242", "127", "165"],
+            "rgb": (242, 127, 165),
             "blocks": "minecraft:pink_wool, minecraft:pink_carpet, minecraft:pink_shulker_box, minecraft:pink_bed[part=foot], minecraft:pink_stained_glass, minecraft:pink_glazed_terracotta, minecraft:pink_concrete, minecraft:pink_concrete_powder, minecraft:pink_candle, minecraft:brain_coral_block[waterlogged=true]",
         },
         {
-            "rgb": ["76", "76", "76"],
+            "rgb": (76, 76, 76),
             "blocks": "minecraft:acacia_wood, minecraft:gray_wool, minecraft:gray_carpet, minecraft:gray_shulker_box, minecraft:gray_bed[part=foot], minecraft:gray_stained_glass, minecraft:gray_glazed_terracotta, minecraft:gray_concrete, minecraft:gray_concrete_powder, minecraft:gray_candle, minecraft:dead_coral_block, minecraft:tinted_glass",
         },
         {
-            "rgb": ["153", "153", "153"],
+            "rgb": (153, 153, 153),
             "blocks": "minecraft:light_gray_wool, minecraft:light_gray_carpet, minecraft:light_gray_shulker_box, minecraft:light_gray_bed[part=foot], minecraft:light_gray_stained_glass, minecraft:light_gray_glazed_terracotta, minecraft:light_gray_concrete, minecraft:light_gray_concrete_powder, minecraft:light_gray_candle, minecraft:structure_block, minecraft:jigsaw",
         },
         {
-            "rgb": ["76", "127", "153"],
+            "rgb": (76, 127, 153),
             "blocks": "minecraft:cyan_wool, minecraft:cyan_carpet, minecraft:cyan_shulker_box, minecraft:cyan_bed[part=foot], minecraft:cyan_stained_glass, minecraft:cyan_glazed_terracotta, minecraft:cyan_concrete, minecraft:cyan_concrete_powder, minecraft:cyan_candle, minecraft:prismarine_slab, minecraft:prismarine_stairs, minecraft:prismarine_wall, minecraft:warped_roots, minecraft:warped_fungus, minecraft:twisting_vines, minecraft:nether_sprouts, minecraft:sculk_sensor",
         },
         {
-            "rgb": ["127", "63", "178"],
+            "rgb": (127, 63, 178),
             "blocks": "minecraft:shulker_box, minecraft:purple_wool, minecraft:purple_carpet, minecraft:purple_shulker_box, minecraft:purple_bed[part=foot], minecraft:purple_stained_glass, minecraft:purple_glazed_terracotta, minecraft:purple_concrete, minecraft:purple_concrete_powder, minecraft:purple_candle, minecraft:mycelium, minecraft:chorus_plant, minecraft:chorus_flower, minecraft:repeating_command_block, minecraft:bubble_coral_block, minecraft:amethyst_block, minecraft:budding_amethyst, minecraft:amethyst_cluster",
         },
         {
-            "rgb": ["51", "76", "178"],
+            "rgb": (51, 76, 178),
             "blocks": "minecraft:blue_wool, minecraft:blue_carpet, minecraft:blue_shulker_box, minecraft:blue_bed[part=foot], minecraft:blue_stained_glass, minecraft:blue_glazed_terracotta, minecraft:blue_concrete, minecraft:blue_concrete_powder, minecraft:blue_candle, minecraft:tube_coral_block",
         },
         {
-            "rgb": ["102", "76", "51"],
+            "rgb": (102, 76, 51),
             "blocks": "minecraft:dark_oak_planks, minecraft:dark_oak_log[axis=y], minecraft:stripped_dark_oak_log[axis=x], minecraft:dark_oak_wood, minecraft:stripped_dark_oak_wood, minecraft:dark_oak_sign, minecraft:dark_oak_pressure_plate, minecraft:dark_oak_trapdoor, minecraft:dark_oak_stairs, minecraft:dark_oak_slab, minecraft:dark_oak_fence_gate, minecraft:dark_oak_fence, minecraft:dark_oak_door, minecraft:spruce_log[axis=x], minecraft:brown_wool, minecraft:brown_carpet, minecraft:brown_shulker_box, minecraft:brown_bed[part=foot], minecraft:brown_stained_glass, minecraft:brown_glazed_terracotta, minecraft:brown_concrete, minecraft:brown_concrete_powder, minecraft:brown_candle, minecraft:soul_sand, minecraft:command_block, minecraft:brown_mushroom, minecraft:soul_soil",
         },
         {
-            "rgb": ["102", "127", "51"],
+            "rgb": (102, 127, 51),
             "blocks": "minecraft:green_wool, minecraft:green_carpet, minecraft:green_shulker_box, minecraft:green_bed[part=foot], minecraft:green_stained_glass, minecraft:green_glazed_terracotta, minecraft:green_concrete, minecraft:green_concrete_powder, minecraft:green_candle, minecraft:end_portal_frame, minecraft:chain_command_block, minecraft:sea_pickle, minecraft:moss_carpet, minecraft:moss_block, minecraft:dried_kelp_block",
         },
         {
-            "rgb": ["153", "51", "51"],
+            "rgb": (153, 51, 51),
             "blocks": "minecraft:red_wool, minecraft:red_carpet, minecraft:red_shulker_box, minecraft:red_bed[part=foot], minecraft:red_stained_glass, minecraft:red_glazed_terracotta, minecraft:red_concrete, minecraft:red_concrete_powder, minecraft:red_candle, minecraft:brick_slab, minecraft:brick_stairs, minecraft:brick_wall, minecraft:red_mushroom_block, minecraft:nether_wart, minecraft:enchanting_table, minecraft:nether_wart_block, minecraft:fire_coral_block, minecraft:red_mushroom, minecraft:shroomlight",
         },
         {
-            "rgb": ["25", "25", "25"],
+            "rgb": (25, 25, 25),
             "blocks": "minecraft:black_wool, minecraft:black_carpet, minecraft:black_shulker_box, minecraft:black_bed[part=foot], minecraft:black_stained_glass, minecraft:black_glazed_terracotta, minecraft:black_concrete, minecraft:black_concrete_powder, minecraft:black_candle, minecraft:obsidian, minecraft:end_portal, minecraft:dragon_egg, minecraft:coal_block, minecraft:end_gateway, minecraft:basalt, minecraft:polished_basalt, minecraft:smooth_basalt, minecraft:netherite_block, minecraft:crying_obsidian, minecraft:respawn_anchor, minecraft:blackstone, minecraft:gilded_blackstone",
         },
         {
-            "rgb": ["250", "238", "77"],
+            "rgb": (250, 238, 77),
             "blocks": "minecraft:gold_block, minecraft:light_weighted_pressure_plate, minecraft:bell, minecraft:raw_gold_block",
         },
         {
-            "rgb": ["92", "219", "213"],
+            "rgb": (92, 219, 213),
             "blocks": "minecraft:diamond_block, minecraft:beacon, minecraft:prismarine_brick_slab, minecraft:prismarine_brick_stairs, minecraft:dark_prismarine_slab, minecraft:dark_prismarine_stairs, minecraft:conduit",
         },
         {
-            "rgb": ["74", "128", "255"],
+            "rgb": (74, 128, 255),
             "blocks": "minecraft:lapis_lazuli_block",
         },
         {
-            "rgb": ["0", "217", "58"],
+            "rgb": (0, 217, 58),
             "blocks": "minecraft:emerald_block",
         },
         {
-            "rgb": ["129", "86", "49"],
+            "rgb": (129, 86, 49),
             "blocks": "minecraft:podzol, minecraft:spruce_planks, minecraft:spruce_log[axis=y], minecraft:stripped_spruce_log[axis=x], minecraft:spruce_wood, minecraft:stripped_spruce_wood, minecraft:spruce_sign, minecraft:spruce_pressure_plate, minecraft:spruce_trapdoor, minecraft:spruce_stairs, minecraft:spruce_slab, minecraft:spruce_fence_gate, minecraft:spruce_fence, minecraft:spruce_door, minecraft:oak_log[axis=x], minecraft:jungle_log[axis=x], minecraft:campfire, minecraft:soul_campfire",
         },
         {
-            "rgb": ["112", "2", "0"],
+            "rgb": (112, 2, 0),
             "blocks": "minecraft:netherrack, minecraft:nether_brick_fence, minecraft:nether_brick_slab, minecraft:nether_brick_stairs, minecraft:nether_brick_wall, minecraft:nether_brick_chiseled, minecraft:nether_brick_cracked, minecraft:nether_gold_ore, minecraft:nether_quartz_ore, minecraft:magma_block, minecraft:red_nether_brick_slab, minecraft:red_nether_brick_stairs, minecraft:red_nether_brick_wall, minecraft:crimson_roots, minecraft:crimson_fungus, minecraft:weeping_vines",
         },
         {
-            "rgb": ["209", "177", "161"],
+            "rgb": (209, 177, 161),
             "blocks": "minecraft:white_terracotta, minecraft:calcite",
         },
         {
-            "rgb": ["159", "82", "36"],
+            "rgb": (159, 82, 36),
             "blocks": "minecraft:orange_terracotta",
         },
         {
-            "rgb": ["149", "87", "108"],
+            "rgb": (149, 87, 108),
             "blocks": "minecraft:magenta_terracotta",
         },
         {
-            "rgb": ["112", "108", "138"],
+            "rgb": (112, 108, 138),
             "blocks": "minecraft:light_blue_terracotta",
         },
         {
-            "rgb": ["186", "133", "36"],
+            "rgb": (186, 133, 36),
             "blocks": "minecraft:yellow_terracotta",
         },
         {
-            "rgb": ["103", "117", "53"],
+            "rgb": (103, 117, 53),
             "blocks": "minecraft:lime_terracotta",
         },
         {
-            "rgb": ["160", "77", "78"],
+            "rgb": (160, 77, 78),
             "blocks": "minecraft:pink_terracotta",
         },
         {
-            "rgb": ["57", "41", "35"],
+            "rgb": (57, 41, 35),
             "blocks": "minecraft:gray_terracotta, minecraft:tuff",
         },
         {
-            "rgb": ["135", "107", "98"],
+            "rgb": (135, 107, 98),
             "blocks": "minecraft:light_gray_terracotta, minecraft:exposed_copper",
         },
         {
-            "rgb": ["87", "92", "92"],
+            "rgb": (87, 92, 92),
             "blocks": "minecraft:cyan_terracotta",
         },
         {
-            "rgb": ["122", "73", "88"],
+            "rgb": (122, 73, 88),
             "blocks": "minecraft:purple_terracotta, minecraft:purple_shulker_box",
         },
         {
-            "rgb": ["76", "62", "92"],
+            "rgb": (76, 62, 92),
             "blocks": "minecraft:blue_terracotta",
         },
         {
-            "rgb": ["76", "50", "35"],
+            "rgb": (76, 50, 35),
             "blocks": "minecraft:brown_terracotta, minecraft:pointed_dripstone, minecraft:dripstone_block",
         },
         {
-            "rgb": ["76", "82", "42"],
+            "rgb": (76, 82, 42),
             "blocks": "minecraft:green_terracotta",
         },
         {
-            "rgb": ["142", "60", "46"],
+            "rgb": (142, 60, 46),
             "blocks": "minecraft:red_terracotta",
         },
         {
-            "rgb": ["37", "22", "16"],
+            "rgb": (37, 22, 16),
             "blocks": "minecraft:black_terracotta",
         },
         {
-            "rgb": ["189", "48", "49"],
+            "rgb": (189, 48, 49),
             "blocks": "minecraft:crimson_nylium",
         },
         {
-            "rgb": ["148", "63", "97"],
+            "rgb": (148, 63, 97),
             "blocks": "minecraft:crimson_planks, minecraft:crimson_log[axis=y], minecraft:stripped_crimson_log[axis=x], minecraft:crimson_wood, minecraft:stripped_crimson_wood, minecraft:crimson_sign, minecraft:crimson_pressure_plate, minecraft:crimson_trapdoor, minecraft:crimson_stairs, minecraft:crimson_slab, minecraft:crimson_fence_gate, minecraft:crimson_fence, minecraft:crimson_door",
         },
         {
-            "rgb": ["92", "25", "29"],
+            "rgb": (92, 25, 29),
             "blocks": "minecraft:crimson_hyphae, minecraft:stripped_crimson_hyphae",
         },
         {
-            "rgb": ["22", "126", "134"],
+            "rgb": (22, 126, 134),
             "blocks": "minecraft:warped_nylium, minecraft:oxidized_copper",
         },
         {
-            "rgb": ["58", "142", "140"],
+            "rgb": (58, 142, 140),
             "blocks": "minecraft:warped_planks, minecraft:warped_log[axis=y], minecraft:stripped_warped_log[axis=x], minecraft:warped_wood, minecraft:stripped_warped_wood, minecraft:warped_sign, minecraft:warped_pressure_plate, minecraft:warped_trapdoor, minecraft:warped_stairs, minecraft:warped_slab, minecraft:warped_fence_gate, minecraft:warped_fence, minecraft:warped_door, minecraft:weathered_copper",
         },
         {
-            "rgb": ["86", "44", "62"],
+            "rgb": (86, 44, 62),
             "blocks": "minecraft:warped_hyphae, minecraft:stripped_warped_hyphae",
         },
         {
-            "rgb": ["20", "180", "133"],
+            "rgb": (20, 180, 133),
             "blocks": "minecraft:warped_wart_block",
         },
         {
-            "rgb": ["100", "100", "100"],
+            "rgb": (100, 100, 100),
             "blocks": "minecraft:deepslate",
         },
         {
-            "rgb": ["216", "175", "147"],
+            "rgb": (216, 175, 147),
             "blocks": "minecraft:raw_iron_block",
         },
         {
-            "rgb": ["127", "167", "150"],
+            "rgb": (127, 167, 150),
             "blocks": "minecraft:glow_lichen",
         },
     ]
@@ -391,7 +391,7 @@ def to_minecraft(
 
     def to_minecraft_color(pxl):
         df_blocks["distance"] = df_blocks["rgb"].apply(
-            lambda rgb: euclidean_distance([int(i) for i in rgb], pxl)
+            lambda rgb: euclidean_distance(rgb, pxl)
         )
 
         df_blocks.sort_values(by="distance", inplace=True)
