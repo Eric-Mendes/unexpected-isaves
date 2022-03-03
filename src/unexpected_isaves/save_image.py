@@ -143,11 +143,6 @@ def to_minecraft(
     # and maps the pixels to the blocks
     blocks = [
         {
-            "color_name": "NONE",
-            "rgb": ["Transparent"],
-            "blocks": "Air, Void Air, Cave Air, Barrier, Redstone Lamp, Cake (including cake with Candles), Powered Rail, Detector Rail, Torch, Redstone Wire, Ladder, Rail, Lever, Redstone Torch, Buttons, Repeater, Tripwire Hook, Tripwire, Flower Pot (including potted plants), Head, Comparator, Activator Rail, End Rod, Glass, Glass Pane, Nether Portal, Stained Glass Pane (all colors), Structure Void, Iron Bars, Soul Fire Torch, Chain, Light Block",
-        },
-        {
             "color_name": "GRASS",
             "rgb": ["127", "178", "56"],
             "blocks": "minecraft:grass_block, minecraft:slime_block",
@@ -454,7 +449,6 @@ def to_minecraft(
         },
     ]
     df_blocks = pd.read_json(json.dumps(blocks))
-    df_blocks.drop([0], inplace=True)
 
     def to_minecraft_color(pxl):
         df_blocks["distance"] = df_blocks["rgb"].apply(
