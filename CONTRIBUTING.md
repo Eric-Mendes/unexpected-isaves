@@ -1,5 +1,5 @@
 # Contributing Guidelines
-> Make sure that you read our [code of conduct](https://github.com/Eric-Mendes/pixel-art-map/blob/main/CODE_OF_CONDUCT.md) before contributing with anything. It ensures a fun and safe community for everyone!
+> Make sure that you read our [code of conduct](https://github.com/Eric-Mendes/unexpected-isaves/blob/main/CODE_OF_CONDUCT.md) before contributing with anything. It ensures a fun and safe community for everyone!
 
 Thanks for considering making this project even better! :sparkles:
 
