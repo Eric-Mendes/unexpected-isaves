@@ -132,13 +132,6 @@ def to_minecraft(
                 material = df.loc[r["first"], i]
                 yield f'fill {s["x"] + player_pos[0]} {0 + player_pos[1]} {s["z"] + player_pos[2]} {e["x"] + player_pos[0]} {0 + player_pos[1]} {e["z"] + player_pos[2]} {material.split(",")[0].strip()}'
 
-    # Helper function. Calculates the "distance" between two RGB colors as if they
-    # were points in a 3-dimensional space.
-    # The closer they are, the more they look like each other.
-    euclidean_distance = lambda pixel, color: sqrt(
-        sum([pow(p - c, 2) for p, c in zip(pixel, color)])
-    )
-
     # Helper function. Loads the blocks an the colors they have when looked at via map,
     # and maps the pixels to the blocks
     blocks = [
@@ -392,8 +385,13 @@ def to_minecraft(
         color = None
         min_distance = None
         for block in blocks:
+            # Calculates the "distance" between two RGB colors as if they
+            # were points in a 3-dimensional space.
+            # The closer they are, the more they look like each other.
+            euclidean_distance = sqrt(sum([pow(p - c, 2) for p, c in zip(block["rgb"], pxl)]))
+
             if min_distance is None or euclidean_distance < min_distance:
-                min_distance = euclidean_distance(rgb, pxl)
+                min_distance = euclidean_distance
                 color = block["blocks"]
         return color
 
