@@ -387,15 +387,15 @@ def to_minecraft(
             "blocks": "minecraft:glow_lichen",
         },
     ]
-    df_blocks = pd.read_json(json.dumps(blocks))
 
     def to_minecraft_color(pxl):
-        df_blocks["distance"] = df_blocks["rgb"].apply(
-            lambda rgb: euclidean_distance(rgb, pxl)
-        )
-
-        df_blocks.sort_values(by="distance", inplace=True)
-        return df_blocks.iloc[0]["blocks"]
+        color = None
+        min_distance = None
+        for block in blocks:
+            if min_distance is None or euclidean_distance < min_distance:
+                min_distance = euclidean_distance(rgb, pxl)
+                color = block["blocks"]
+        return color
 
     # Resizing the image and mapping each pixel's color to a minecraft color
     image = image.resize(
