@@ -25,6 +25,8 @@ Have you ever been bored by the same old `.png`, `.jpg`, `.jpeg`, `.gif` and all
 - [Why unexpected-isaves?](https://github.com/Eric-Mendes/unexpected-isaves#why-unexpected-isaves);
 - [Contributing :pencil:](https://github.com/Eric-Mendes/unexpected-isaves#contributing-pencil).
 
+<hr/>
+
 ## What does this package do :thinking:
 With this package you can save any image opened with the [`PIL.Image` module](https://pillow.readthedocs.io/en/stable/reference/Image.html) on a given `path` as a
 - Spreadsheet:
