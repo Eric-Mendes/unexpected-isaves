@@ -431,7 +431,7 @@ def to_minecraft(
             datapack_version = 9
     else:
         datapack_version = 4
-        return "This versions is incompatible with datapacks (below 1.13.0) or the version is writen wrong (correct: x.xx.x | wrong: x.x, x.xx)"
+        raise ValueError("This versions is incompatible with datapacks (below 1.13.0) or the version is writen wrong (correct: x.xx.x | wrong: x.x, x.xx)")
 
     pack_mcmeta = {
         "pack": {
