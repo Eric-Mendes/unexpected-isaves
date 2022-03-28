@@ -20,14 +20,15 @@ Example: `/home/user/Documents/my_image.xlsx`;
 your image's dimensions by. Defaults to `10`;
  * It is very important that you lower your image's dimensions because a big image might take the function a long time to process plus your spreadsheet will probably take a long time to load on any software that you use to open it;
 * :param **spreadsheet_kwargs: See below.
-## Spreadsheet Kwargs
+
+##### Spreadsheet Kwargs
 Optional parameters to tweak the spreadsheet's appearance.
 * :param row_height (`float`): the rows' height. Defaults to `15`;
 * :param column_width (`float`): the columns' width. Defaults to `2.3`;
  * The default values on `row_height` and `column_width` were specifically thought out so that they make the cells squared, however - as any hardcoded value - they might not do the trick on your device. That is when you might want to tweak them a little bit.
 * :param delete_cell_value (`bool`): wheter to keep or not the text corresponding to that color. Defaults to `True`;
 * :param zoom_scale (`int`): how much to zoom in or out on the spreadsheet. Defaults to `20` which seems to be the default max zoom out on most spreadsheet softwares.
-## Return
+##### Return
 * :return: `None`, but outputs a `.xlsx` file on the given `path`.
 
 ---
@@ -42,7 +43,7 @@ Example: `/home/user/Documents/my_image_datapack`;
 * :param lower_image_size_by: A factor that the function will divide
 your image's dimensions by. Defaults to `10`;
 * :param player_pos: The player's (x, y, z) position. Defaults to `(0, 0, 0)`.
-## Return
+##### Return
 * :return: `None`, but outputs a datapack on the given `path`.
 
 ---
