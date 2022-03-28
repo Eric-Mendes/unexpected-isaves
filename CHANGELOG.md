@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- Github page for the docs.
 
 ## [1.2.2] - 2022-03-22
 ### Changed
@@ -39,4 +41,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Github Actions workflows for automated building & distribution of the package.
 
 ### Changed
-- [@Eric-Mendes](https://github.com/Eric-Mendes) finally settled for a versioning style: it should be `n1.n2.n3` where `n1` is for breaking changes; `n2` is for enhancements on pre-existing code & documentation or new feature added; and `n3` is for fixes, style changes & refactors.
+- [@Eric-Mendes](https://github.com/Eric-Mendes) finally "learned" semver.
