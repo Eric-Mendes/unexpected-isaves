@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [1.2.2] - 2022-03-22
+### Changed
+- Now accepting Python 3.8 as this works just fine with it as well.
+
 ## [1.2.1] - 2022-03-22
 ### Changed
 - `README.md` now's got examples and a logo on it.
