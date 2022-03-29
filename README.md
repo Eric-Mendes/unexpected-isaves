@@ -30,10 +30,10 @@ Have you ever been bored by the same old `.png`, `.jpg`, `.jpeg`, `.gif` and all
 ## What does this package do :thinking:
 With this package you can save any image opened with the [`PIL.Image` module](https://pillow.readthedocs.io/en/stable/reference/Image.html) on a given `path` as a
 - Spreadsheet:
-![this_is_fine](https://user-images.githubusercontent.com/42689328/159305173-7946f75e-999d-479d-8ac6-cd09e89097c0.png)
+![this_is_fine-python-excel-spreadsheet-unexpected-isaves](https://user-images.githubusercontent.com/42689328/159305173-7946f75e-999d-479d-8ac6-cd09e89097c0.png)
 
 - Minecraft Pixel Art Datapack:
-![naruto](https://user-images.githubusercontent.com/42689328/159305299-12f8086d-0ef4-4e7a-9960-29ad777f8a7f.png)
+![naruto-python-minecraft-pixel-art-data-pack-unexpected-isaves](https://user-images.githubusercontent.com/42689328/159305299-12f8086d-0ef4-4e7a-9960-29ad777f8a7f.png)
 
 
 ## How to use it :computer:
