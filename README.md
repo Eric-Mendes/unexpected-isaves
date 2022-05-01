@@ -13,6 +13,9 @@
     <a href="https://github.com/psf/black">
         <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"/>
     </a>
+    <a href="https://unexpected-isaves.readthedocs.io/en/latest/?badge=latest">
+        <img src="https://readthedocs.org/projects/unexpected-isaves/badge/?version=latest" alt="Documentation Status"/>
+    </a>
 </div>
 <br/>
 Unconventional ways to save an image :smile:
