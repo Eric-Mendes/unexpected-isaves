@@ -22,8 +22,7 @@ you can use the ``save_image.to_excel()`` function:
 
 - The ``image`` parameter is your image opened using the `PIL.Image` module;
 - The ``path`` parameter is the path that you want to save the output file;
-- The ``lower_image_size_by`` parameter is a factor that the function will divide 
-your image's dimensions by. Defaults to `10`;
+- The ``lower_image_size_by`` parameter is a factor that the function will divide your image's dimensions by. Defaults to `10`;
     - It is very important that you lower your image's dimensions because a big image might take the function a long time to process plus your spreadsheet will probably take a long time to load on any software that you use to open it.
 - The ``spreadsheet_kwargs`` are optional parameters to tweak the spreadsheet's appearance.
     - The ``row_height`` parameter (`float`): the rows' height. Defaults to `15`;
@@ -45,8 +44,7 @@ you can use the ``save_image.to_minecraft()`` function:
 
 - The ``image`` parameter is your image opened using the `PIL.Image` module;
 - The ``path`` parameter is the path that you want to save the output datapack;
-- The ``lower_image_size_by`` parameter is a factor that the function will divide 
-your image's dimensions by. Defaults to `10`;
+- The ``lower_image_size_by`` parameter is a factor that the function will divide your image's dimensions by. Defaults to `10`;
 - The ``player_pos`` are the player's (x, y, z) position. Defaults to `(0, 0, 0)`.
     
 It returns `None` but outputs a datapack on the given `path`.
