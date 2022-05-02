@@ -417,7 +417,7 @@ def to_minecraft(
         os.makedirs(f"{path}/data/pixelart-map/functions")
 
     if minecraft_version >= '1.13.0':
-        if minecraft_version >= '1.13.0' & minecraft_version <= '1.14.4':
+        if minecraft_version >= '1.13.0' and minecraft_version <= '1.14.4':
             datapack_version = 4
         elif minecraft_version >= '1.15.0' & minecraft_version <= '1.16.1':
             datapack_version = 5
