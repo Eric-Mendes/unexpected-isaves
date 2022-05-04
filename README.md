@@ -1,6 +1,6 @@
 <div id="header" align="center">
     <img src="https://user-images.githubusercontent.com/42689328/159303554-70eaea67-8840-4889-8683-b54fa7b815cb.png" alt="unexpected-isaves" width=300 />
-    <h1> Unexpected Image Saves </h1>
+    <h2> Unexpected image saves </h2>
     <a href="https://badge.fury.io/py/unexpected-isaves">
         <img src="https://badge.fury.io/py/unexpected-isaves.svg" alt="PyPI version"/>
     </a>
@@ -18,7 +18,8 @@
     </a>
 </div>
 <br/>
-Unconventional ways to save an image :smile:
+
+<h1> Generate images as a spreadsheet or a Minecraft pixel art using Python </h1>
 
 Have you ever been bored by the same old `.png`, `.jpg`, `.jpeg`, `.gif` and all other image extensions? Have you ever wanted something different - goofy - but also clever? Then this is the package for you! :sparkles:
 
