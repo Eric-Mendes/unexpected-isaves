@@ -1,6 +1,6 @@
 <div id="header" align="center">
     <img src="https://user-images.githubusercontent.com/42689328/159303554-70eaea67-8840-4889-8683-b54fa7b815cb.png" alt="unexpected-isaves" width=300 />
-    <h1> Unexpected Image Saves </h1>
+    <h2> Unexpected image saves </h2>
     <a href="https://badge.fury.io/py/unexpected-isaves">
         <img src="https://badge.fury.io/py/unexpected-isaves.svg" alt="PyPI version"/>
     </a>
@@ -13,9 +13,13 @@
     <a href="https://github.com/psf/black">
         <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"/>
     </a>
+    <a href="https://unexpected-isaves.readthedocs.io/en/latest/?badge=latest">
+        <img src="https://readthedocs.org/projects/unexpected-isaves/badge/?version=latest" alt="Documentation Status"/>
+    </a>
 </div>
 <br/>
-Unconventional ways to save an image :smile:
+
+<h1> Generate images as a spreadsheet or a Minecraft pixel art using Python </h1>
 
 Have you ever been bored by the same old `.png`, `.jpg`, `.jpeg`, `.gif` and all other image extensions? Have you ever wanted something different - goofy - but also clever? Then this is the package for you! :sparkles:
 
@@ -25,13 +29,15 @@ Have you ever been bored by the same old `.png`, `.jpg`, `.jpeg`, `.gif` and all
 - [Why unexpected-isaves?](https://github.com/Eric-Mendes/unexpected-isaves#why-unexpected-isaves);
 - [Contributing :pencil:](https://github.com/Eric-Mendes/unexpected-isaves#contributing-pencil).
 
+<hr/>
+
 ## What does this package do :thinking:
 With this package you can save any image opened with the [`PIL.Image` module](https://pillow.readthedocs.io/en/stable/reference/Image.html) on a given `path` as a
 - Spreadsheet:
-![this_is_fine](https://user-images.githubusercontent.com/42689328/159305173-7946f75e-999d-479d-8ac6-cd09e89097c0.png)
+![this_is_fine-meme-python-excel-spreadsheet-unexpected-isaves](https://user-images.githubusercontent.com/42689328/159305173-7946f75e-999d-479d-8ac6-cd09e89097c0.png)
 
 - Minecraft Pixel Art Datapack:
-![naruto](https://user-images.githubusercontent.com/42689328/159305299-12f8086d-0ef4-4e7a-9960-29ad777f8a7f.png)
+![naruto-anime-python-minecraft-pixel-art-data-pack-unexpected-isaves](https://user-images.githubusercontent.com/42689328/159305299-12f8086d-0ef4-4e7a-9960-29ad777f8a7f.png)
 
 
 ## How to use it :computer:
