@@ -63,6 +63,11 @@ It is really easy to use. The app will guide through the steps. The only thing t
 1. Your image needs to be inside of the `app/images/` folder;
 2. Your unexpected-isave will appear inside of the `app/saves/` folder.
 
+You can use the app by going to the project's root folder and type
+```bash
+make image_save
+```
+
 ## Why unexpected-isaves?
 You might be wondering: why would I ever need such a useless lib? The answer is: you wouldn't. This lib was created for learning purposes, and it was never my intention to make it useful. It might be a nice way to impress your friends on your Minecraft server, or to make an important presentation lighter with a fun spreadsheet art, though. Be creative!
 
