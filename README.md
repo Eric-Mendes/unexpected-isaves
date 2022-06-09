@@ -61,7 +61,7 @@ By only having Make & Docker installed you also can generate your arts using the
 
 It is really easy to use. The app will guide through the steps. The only thing to look out for is the "setup" & how it works:
 1. Your image needs to be inside of the `app/images/` folder;
-2. Your unexpected-isave will appear inside onde the `app/saves/` folder.
+2. Your unexpected-isave will appear inside of the `app/saves/` folder.
 
 ## Why unexpected-isaves?
 You might be wondering: why would I ever need such a useless lib? The answer is: you wouldn't. This lib was created for learning purposes, and it was never my intention to make it useful. It might be a nice way to impress your friends on your Minecraft server, or to make an important presentation lighter with a fun spreadsheet art, though. Be creative!
