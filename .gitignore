@@ -133,7 +133,7 @@ dmypy.json
 
 
 # app
-app/images
-app/saves
+app/images/*
+app/saves/*
 !app/images/this_is_fine.jpeg
 !app/saves/this_is_fine.xlsx
