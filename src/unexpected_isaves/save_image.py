@@ -91,6 +91,8 @@ def to_minecraft(
     path: str,
     lower_image_size_by: int = 10,
     player_pos: Tuple[int, int, int] = (0, 0, 0),
+    minecraft_version: str = '1.18.2',
+
 ) -> None:
     """
     - Added on release 0.0.1;
@@ -104,7 +106,8 @@ def to_minecraft(
     Example: `/home/user/Documents/my_image_datapack`;
     * :param lower_image_size_by: A factor that the function will divide
     your image's dimensions by. Defaults to `10`;
-    * :param player_pos: The player's (x, y, z) position. Defaults to `(0, 0, 0)`.
+    * :param player_pos: The player's (x, y, z) position. Defaults to `(0, 0, 0)`;
+    * :param minecraft_version: The minecraft client version (x.xx.x). Default is `1.18.2`.
 
     ## Return
     * :return: `None`, but outputs a datapack on the given `path`.
@@ -413,9 +416,26 @@ def to_minecraft(
         os.makedirs(f"{path}/data/minecraft/tags/functions")
         os.makedirs(f"{path}/data/pixelart-map/functions")
 
+    if minecraft_version >= '1.13.0':
+        if minecraft_version >= '1.13.0' and minecraft_version <= '1.14.4':
+            datapack_version = 4
+        elif minecraft_version >= '1.15.0' & minecraft_version <= '1.16.1':
+            datapack_version = 5
+        elif minecraft_version >= '1.16.2' & minecraft_version <= '1.16.5':
+            datapack_version = 6
+        elif minecraft_version >= '1.17.0' & minecraft_version <= '1.17.1':
+            datapack_version = 7
+        elif minecraft_version >= '1.18.0' & minecraft_version <= '1.18.1':
+            datapack_version = 8
+        elif minecraft_version >= '1.18.2':
+            datapack_version = 9
+    else:
+        datapack_version = 4
+        raise ValueError("This versions is incompatible with datapacks (below 1.13.0) or the version is writen wrong (correct: x.xx.x | wrong: x.x, x.xx)")
+
     pack_mcmeta = {
         "pack": {
-            "pack_format": 8,
+            "pack_format": datapack_version,
             "description": f"This datapack will generate the image ({image_name}) in your world",
         }
     }
