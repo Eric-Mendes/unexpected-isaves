@@ -59,11 +59,11 @@ save_image.to_excel(
 ### Via Docker app
 By only having Make & Docker installed you also can generate your arts using the Docker app on the `app/` folder. You don't need any of the required packages installed and not even Python!
 
-It is really easy to use. The app will guide through the steps. The only thing to look out for is the "setup" & how it works:
+It is really easy to use. The app will guide you through the steps. The only thing to look out for is the "setup" & how it works:
 1. Your image needs to be inside of the `app/images/` folder;
 2. Your unexpected-isave will appear inside of the `app/saves/` folder.
 
-You can use the app by going to the project's root folder and type
+You can use the app by going to the project's root folder and typing
 ```bash
 make image_save
 ```
