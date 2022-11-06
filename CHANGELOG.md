@@ -6,7 +6,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 ### Added
-- Simple Docker app for local use without installing the package.
 - Read The Docs page.
 
 ## [1.2.2] - 2022-03-22
