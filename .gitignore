@@ -130,3 +130,10 @@ dmypy.json
 
 # VSCode
 .vscode
+
+
+# app
+app/images/*
+app/saves/*
+!app/images/this_is_fine.jpeg
+!app/saves/this_is_fine.xlsx
