@@ -1,11 +1,49 @@
-[build-system]
-requires = [
-    "setuptools>=42",
-    "wheel",
-    "pandas>=1.3.5",
-    "numpy>=1.21.5",
-    "Pillow>=8.4.0",
-    "openpyxl>=3.0.9",
-    "matplotlib>=3.5.1"
+[project]
+name = "unexpected_isaves"
+version = "1.2.2"
+description = "Python library that paints an image on a spreadsheet or builds its pixel art in Minecraft."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+keywords = ["minecraft", "pixel", "art", "excel", "spreadsheet"]
+authors = [
+  {name = "Eric Mendes", email = "ericvelasco.2000@gmail.com" }
 ]
+maintainers = [
+  {name = "Eric Mendes", email = "ericvelasco.2000@gmail.com" }
+]
+classifiers = [  
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Other Audience",
+  "Topic :: Artistic Software",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = [ 
+  "pandas>=1.3.5",
+  "numpy>=1.21.5",
+  "Pillow>=8.4.0",
+  "openpyxl>=3.0.9",
+  "matplotlib>=3.5.1"
+]
+
+[project.optional-dependencies] 
+dev = ["black"]
+
+[project.urls]  
+"Homepage" = "https://github.com/Eric-Mendes/unexpected-isaves"
+"Bug Reports" = "https://github.com/Eric-Mendes/unexpected-isaves/issues"
+"Say Thanks!" = "https://saythanks.io/to/Eric-Mendes"
+"Source" = "https://github.com/Eric-Mendes/unexpected-isaves"
+
+[tool.setuptools]
+package-data = {"unexpected_isaves" = ["blocks.json"]}
+
+[build-system]
+requires = ["setuptools>=43.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
