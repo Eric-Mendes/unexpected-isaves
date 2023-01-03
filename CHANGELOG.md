@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 ### Added
-- Read The Docs page.
+- Moved metadata to `pyproject.toml`. See https://github.com/pypa/sampleproject/pull/166.
 
 ## [1.2.2] - 2022-03-22
 ### Changed
