@@ -13,10 +13,15 @@ It's because of people like you that the arts made with this tool keep getting b
 
 To do so, please follow the instructions below.
 
+## Setting up the development environment
+Install the package locally in your environment with the command below and code away!
+```bash
+pip install -e .[dev]
+```
 ## Gitflow
 Whenever you want to contribute with code - whatever code it is - please make sure that you follow these rules (the same follows for documentation):
 1. Fork the project;
-2. Test your code before opening the Pull Request. Please remember to submit your tests as well when opening the PR (if you are submitting code);
+2. Test your code before opening the Pull Request. Please remember to submit your new tests as well when opening the PR (if you are submitting new code);
 3. Open the Pull Request.
 Please be specific and clear about what your code or documentation tackles. Styles and naming conventions are described below.
 
