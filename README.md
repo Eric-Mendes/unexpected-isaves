@@ -13,9 +13,6 @@
     <a href="https://github.com/psf/black">
         <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"/>
     </a>
-    <a href="https://unexpected-isaves.readthedocs.io/en/latest/?badge=latest">
-        <img src="https://readthedocs.org/projects/unexpected-isaves/badge/?version=latest" alt="Documentation Status"/>
-    </a>
     <a href="https://saythanks.io/to/Eric-Mendes">
         <img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg" alt="Say Thanks!"/>
     </a>

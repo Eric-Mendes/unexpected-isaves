@@ -91,6 +91,7 @@ def to_minecraft(
     path: str,
     lower_image_size_by: int = 10,
     player_pos: Tuple[int, int, int] = (0, 0, 0),
+    minecraft_version: str = "1.18.2",
 ) -> None:
     """
     - Added on release 0.0.1;
@@ -105,6 +106,7 @@ def to_minecraft(
     * :param lower_image_size_by: A factor that the function will divide
     your image's dimensions by. Defaults to `10`;
     * :param player_pos: The player's (x, y, z) position. Defaults to `(0, 0, 0)`.
+    * :param minecraft_version: The minecraft version. Needs to be higher than or equal to `1.13.0`, and defaults to `1.19.0`.
 
     ## Return
     * :return: `None`, but outputs a datapack on the given `path`.
@@ -170,9 +172,28 @@ def to_minecraft(
         os.makedirs(f"{path}/data/minecraft/tags/functions")
         os.makedirs(f"{path}/data/pixelart-map/functions")
 
+    if minecraft_version >= "1.13.0" and minecraft_version <= "1.14.4":
+        datapack_version = 4
+    elif minecraft_version >= "1.15.0" and minecraft_version <= "1.16.1":
+        datapack_version = 5
+    elif minecraft_version >= "1.16.2" and minecraft_version <= "1.16.5":
+        datapack_version = 6
+    elif minecraft_version >= "1.17.0" and minecraft_version <= "1.17.1":
+        datapack_version = 7
+    elif minecraft_version >= "1.18.0" and minecraft_version <= "1.18.1":
+        datapack_version = 8
+    elif minecraft_version == "1.18.2":
+        datapack_version = 9
+    elif minecraft_version == "1.19.0":
+        datapack_version = 10
+    else:
+        raise ValueError(
+            "Unsupported minecraft_version. If you feel like this is a mistake, open an issue at https://github.com/Eric-Mendes/unexpected-isaves/issues to let us know."
+        )
+
     pack_mcmeta = {
         "pack": {
-            "pack_format": 8,
+            "pack_format": datapack_version,
             "description": f"This datapack will generate the image ({image_name}) in your world",
         }
     }
