@@ -14,6 +14,7 @@ def to_excel(
     image: Image,
     path: str,
     lower_image_size_by: int = 10,
+    image_position: Tuple[int, int] = (0, 0),
     **spreadsheet_kwargs,
 ) -> None:
     """
@@ -43,6 +44,14 @@ def to_excel(
     ## Return
     * :return: `None`, but outputs a `.xlsx` file on the given `path`.
     """
+    image_position_row = image_position[0]
+    image_position_col = image_position[1]
+    if image_position_row > 0:
+        image_position_row -= 1
+    if image_position_col > 0:
+        image_position_col -= 1
+    if image_position_row < 0 or image_position_col < 0:
+        raise ValueError("image_position cannot have negative values.")
     image = image.convert("RGB")
     image = image.resize(
         (image.size[0] // lower_image_size_by, image.size[1] // lower_image_size_by)
@@ -57,7 +66,13 @@ def to_excel(
     image_name = os.path.splitext(os.path.split(path)[1])[0]
 
     # Saving a DataFrame where each cell has a text corresponding to the RGB color its background should be
-    df.to_excel(path, index=False, header=False)
+    df.to_excel(
+        path,
+        index=False,
+        header=False,
+        startrow=image_position_row,
+        startcol=image_position_col,
+    )
 
     # Loading the excel file, painting each cell with its color and saving the updates
     wb = load_workbook(path)
@@ -67,11 +82,13 @@ def to_excel(
 
     for row in range(1, df.shape[0] + 1):
         for col in range(1, df.shape[1] + 1):
-            cell = ws.cell(row=row, column=col)
+            cell = ws.cell(row=row + image_position_row, column=col + image_position_col)
             # Makes cells squared
-            ws.row_dimensions[row].height = spreadsheet_kwargs.get("row_height", 15)
+            ws.row_dimensions[row + image_position_row].height = spreadsheet_kwargs.get(
+                "row_height", 15
+            )
             ws.column_dimensions[
-                utils.get_column_letter(col)
+                utils.get_column_letter(col + image_position_col)
             ].width = spreadsheet_kwargs.get("column_width", 2.3)
 
             # Painting the cell
