@@ -30,6 +30,7 @@ def to_excel(
     * :param lower_image_size_by: A factor that the function will divide
     your image's dimensions by. Defaults to `10`;
        * It is very important that you lower your image's dimensions because a big image might take the function a long time to process plus your spreadsheet will probably take a long time to load on any software that you use to open it;
+    * :param image_position: a tuple determining the position of the top leftmost pixel. Cannot have negative values.
     * :param **spreadsheet_kwargs: See below.
 
     ## Spreadsheet Kwargs
@@ -52,6 +53,7 @@ def to_excel(
         image_position_col -= 1
     if image_position_row < 0 or image_position_col < 0:
         raise ValueError("image_position cannot have negative values.")
+
     image = image.convert("RGB")
     image = image.resize(
         (image.size[0] // lower_image_size_by, image.size[1] // lower_image_size_by)
@@ -82,7 +84,9 @@ def to_excel(
 
     for row in range(1, df.shape[0] + 1):
         for col in range(1, df.shape[1] + 1):
-            cell = ws.cell(row=row + image_position_row, column=col + image_position_col)
+            cell = ws.cell(
+                row=row + image_position_row, column=col + image_position_col
+            )
             # Makes cells squared
             ws.row_dimensions[row + image_position_row].height = spreadsheet_kwargs.get(
                 "row_height", 15
