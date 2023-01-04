@@ -192,7 +192,7 @@ def to_minecraft(
         )
 
     pack_mcmeta = {
-        "pack": {
+        'pack': {
             "pack_format": datapack_version,
             "description": f"This datapack will generate the image ({image_name}) in your world",
         }
