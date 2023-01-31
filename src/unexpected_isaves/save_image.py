@@ -2,7 +2,7 @@ import json
 import os
 from contextlib import suppress
 from math import sqrt
-from typing import Tuple
+from typing import Tuple, Union
 
 import numpy as np
 import pandas as pd
@@ -11,7 +11,7 @@ from PIL import Image
 
 
 def to_excel(
-    image: Image,
+    image: Union[Image.Image, str],
     path: str,
     lower_image_size_by: int = 10,
     image_position: Tuple[int, int] = (0, 0),
@@ -30,7 +30,7 @@ def to_excel(
     * :param lower_image_size_by: A factor that the function will divide
     your image's dimensions by. Defaults to `10`;
        * It is very important that you lower your image's dimensions because a big image might take the function a long time to process plus your spreadsheet will probably take a long time to load on any software that you use to open it;
-    * :param image_position: a tuple determining the position of the top leftmost pixel. Cannot have negative values.
+    * :param image_position: a tuple determining the position of the top leftmost pixel. Cannot have negative values. Defaults to `(0,0)`.
     * :param **spreadsheet_kwargs: See below.
 
     ## Spreadsheet Kwargs
@@ -45,6 +45,9 @@ def to_excel(
     ## Return
     * :return: `None`, but outputs a `.xlsx` file on the given `path`.
     """
+    if isinstance(image, str):
+        image = Image.open(image)
+
     image_position_row = image_position[0]
     image_position_col = image_position[1]
     if image_position_row > 0:
@@ -108,7 +111,7 @@ def to_excel(
 
 
 def to_minecraft(
-    image: Image,
+    image: Union[Image.Image, str],
     path: str,
     lower_image_size_by: int = 10,
     player_pos: Tuple[int, int, int] = (0, 0, 0),
@@ -132,6 +135,9 @@ def to_minecraft(
     ## Return
     * :return: `None`, but outputs a datapack on the given `path`.
     """
+    if isinstance(image, str):
+        image = Image.open(image)
+
     image = image.convert("RGB")
 
     # Makes the commands that the datapack will run when loaded
