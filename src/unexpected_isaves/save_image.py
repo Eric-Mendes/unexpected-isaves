@@ -24,7 +24,7 @@ def to_excel(
     Saves an image as a `.xlsx` file by coloring its cells each pixel's color.
 
     ## Parameters
-    * :param image: Your image opened using the `PIL.Image` module;
+    * :param image: Your image opened using the `PIL.Image` module or the image's path as `str`;
     * :param path: The path that you want to save your output file.
     Example: `/home/user/Documents/my_image.xlsx`;
     * :param lower_image_size_by: A factor that the function will divide
@@ -124,7 +124,7 @@ def to_minecraft(
     Saves an image as a minecraft datapack that when loaded into your world will build a pixel art of it on the player's position.
 
     ## Parameters
-    * :param image: Your image opened using the `PIL.Image` module;
+    * :param image: Your image opened using the `PIL.Image` module or the image's path as `str`;
     * :param path: The path that you want to save your datapack.
     Example: `/home/user/Documents/my_image_datapack`;
     * :param lower_image_size_by: A factor that the function will divide
