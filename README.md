@@ -33,7 +33,7 @@ Have you ever been bored by the same old `.png`, `.jpg`, `.jpeg`, `.gif` and all
 <hr/>
 
 ## What does this package do :thinking:
-With this package you can save any image opened with the [`PIL.Image` module](https://pillow.readthedocs.io/en/stable/reference/Image.html) on a given `path` as a
+With this package you can save any image on a given `path` as a
 - Spreadsheet:
 ![this_is_fine-meme-python-excel-spreadsheet-unexpected-isaves](https://user-images.githubusercontent.com/42689328/159305173-7946f75e-999d-479d-8ac6-cd09e89097c0.png)
 
