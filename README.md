@@ -46,14 +46,13 @@ First you install it in your environment like this
 ```bash
 pip install unexpected-isaves
 ```
-Then you can start using it already! Open any image you've got locally with PIL and try to save it using our functions!
+Then you can start using it already! Pass the path of any image you've got locally and try to save it using our functions!
 ```python
 from unexpected_isaves import save_image
-from PIL import Image
 
 
 save_image.to_excel(
-    image=Image.open("my_image.png"),
+    image="my_image.png",
     path="/home/user/Documents/my_image.xlsx"
 )
 ```
