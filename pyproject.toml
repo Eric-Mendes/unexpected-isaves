@@ -1,6 +1,6 @@
 [project]
 name = "unexpected_isaves"
-version = "1.4.0"
+version = "1.5.0"
 description = "Python library that paints an image on a spreadsheet or builds its pixel art in Minecraft."
 readme = "README.md"
 requires-python = ">=3.8"
