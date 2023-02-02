@@ -21,7 +21,8 @@
 
 <h1> Generate images as a spreadsheet or a Minecraft pixel art using Python </h1>
 
-Have you ever been bored by the same old `.png`, `.jpg`, `.jpeg`, `.gif` and all other image extensions? Have you ever wanted something different - goofy - but also clever? Then this is the package for you! :sparkles:
+A quick scroll through social media and you'll find very talented people making portraits out of dice, rubik's cube, in minecraft as pixel art, or even using MIDI notes on a Digital Audio Workstation (DAW). This package gives you the ability to do the same, with or without talent.
+Currently it can only generate arts using minecraft or the cells of a spreadsheet, but if you have any ideas that fit into the project's goal please [let me know](https://github.com/Eric-Mendes/unexpected-isaves/issues/10), or - even better - submit a merge request with your work!
 
 ## Table of contents
 - [What does this package do :thinking:](https://github.com/Eric-Mendes/unexpected-isaves#what-does-this-package-do-thinking);
@@ -33,8 +34,8 @@ Have you ever been bored by the same old `.png`, `.jpg`, `.jpeg`, `.gif` and all
 <hr/>
 
 ## What does this package do :thinking:
-With this package you can save any image on a given `path` as a
-- Spreadsheet:
+With this package you can save any `image` on a given `path` as a
+- Spreadsheet:`
 ![this_is_fine-meme-python-excel-spreadsheet-unexpected-isaves](https://user-images.githubusercontent.com/42689328/159305173-7946f75e-999d-479d-8ac6-cd09e89097c0.png)
 
 - Minecraft Pixel Art Datapack:
