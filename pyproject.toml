@@ -1,7 +1,7 @@
 [project]
 name = "unexpected_isaves"
-version = "2.0.0"
-description = "Python library that paints an image on a spreadsheet or builds its pixel art in Minecraft."
+version = "2.0.1"
+description = "A Python library that paints an image on a spreadsheet, builds its pixel art in Minecraft, or makes an ascii art out of it."
 readme = "README.md"
 requires-python = ">=3.8"
 license = {file = "LICENSE"}
