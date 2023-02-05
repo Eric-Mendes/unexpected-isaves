@@ -23,27 +23,19 @@ def to_excel(
 
     Saves an image as a `.xlsx` file by coloring its cells each pixel's color.
 
-    ## Parameters
-    * :param image: Your image opened using the `PIL.Image` module or the image's path as `str`;
-    * :param path: The path that you want to save your output file.
-    Example: `/home/user/Documents/my_image.xlsx`;
-    * :param lower_image_size_by: A factor that the function will divide
-    your image's dimensions by. Defaults to `10`;
-       * It is very important that you lower your image's dimensions because a big image might take the function a long time to process plus your spreadsheet will probably take a long time to load on any software that you use to open it;
-    * :param image_position: a tuple determining the position of the top leftmost pixel. Cannot have negative values. Defaults to `(0,0)`.
-    * :param **spreadsheet_kwargs: See below.
+    Args
+        image: Your image opened using the `PIL.Image` module or the image's path as `str`.
+        path: The path that you want to save your output file. Example: `/home/user/Documents/my_image.xlsx`.
+        lower_image_size_by: A factor that the function will divide your image's dimensions by. Defaults to `10`. It is very important that you lower your image's dimensions because a big image might take the function a long time to process plus your spreadsheet will probably take a long time to load on any software that you use to open it.
+        image_position: a tuple determining the position of the top leftmost pixel. Cannot have negative values. Defaults to `(0,0)`.
+        **spreadsheet_kwargs: Optional parameters to tweak the spreadsheet's appearance. The default values on `row_height` and `column_width` were specifically thought out so that they make the cells squared, however - as any hardcoded value - they might not do the trick on your device. That is when you might want to tweak them a little bit.
+            row_height (`float`): the rows' height. Defaults to `15`.
+            column_width (`float`): the columns' width. Defaults to `2.3`.
+            delete_cell_value (`bool`): wheter to keep or not the text corresponding to that color. Defaults to `True`.
+            zoom_scale (`int`): how much to zoom in or out on the spreadsheet. Defaults to `20` which seems to be the default max zoom out on most spreadsheet softwares.
 
-    ## Spreadsheet Kwargs
-    Optional parameters to tweak the spreadsheet's appearance.
-
-    * :param row_height (`float`): the rows' height. Defaults to `15`;
-    * :param column_width (`float`): the columns' width. Defaults to `2.3`;
-       * The default values on `row_height` and `column_width` were specifically thought out so that they make the cells squared, however - as any hardcoded value - they might not do the trick on your device. That is when you might want to tweak them a little bit.
-    * :param delete_cell_value (`bool`): wheter to keep or not the text corresponding to that color. Defaults to `True`;
-    * :param zoom_scale (`int`): how much to zoom in or out on the spreadsheet. Defaults to `20` which seems to be the default max zoom out on most spreadsheet softwares.
-
-    ## Return
-    * :return: `None`, but outputs a `.xlsx` file on the given `path`.
+    Returns
+        `None`, but outputs a `.xlsx` file on the given `path`.
     """
     if isinstance(image, str):
         image = Image.open(image)
@@ -123,17 +115,18 @@ def to_minecraft(
 
     Saves an image as a minecraft datapack that when loaded into your world will build a pixel art of it on the player's position.
 
-    ## Parameters
-    * :param image: Your image opened using the `PIL.Image` module or the image's path as `str`;
-    * :param path: The path that you want to save your datapack.
-    Example: `/home/user/Documents/my_image_datapack`;
-    * :param lower_image_size_by: A factor that the function will divide
-    your image's dimensions by. Defaults to `10`;
-    * :param player_pos: The player's (x, y, z) position. Defaults to `(0, 0, 0)`.
-    * :param minecraft_version: The minecraft version. Needs to be higher than or equal to `1.13.0`, and defaults to `1.19.0`.
+    Args
+        image: Your image opened using the `PIL.Image` module or the image's path as `str`;
+        path: The path that you want to save your datapack. Example: `/home/user/Documents/my_image_datapack`;
+        lower_image_size_by: A factor that the function will divide your image's dimensions by. Defaults to `10`;
+        player_pos: The player's (x, y, z) position. Defaults to `(0, 0, 0)`.
+        minecraft_version: The minecraft version. Needs to be higher than or equal to `1.13.0`, and defaults to `1.18.2`.
 
-    ## Return
-    * :return: `None`, but outputs a datapack on the given `path`.
+    Returns
+        `None`, but outputs a datapack on the given `path`.
+    
+    Raises
+        ValueError: "Unsupported minecraft_version. If you feel like this is a mistake, open an issue at https://github.com/Eric-Mendes/unexpected-isaves/issues to let us know."
     """
     if isinstance(image, str):
         image = Image.open(image)
@@ -270,8 +263,9 @@ def to_ascii(
     more_levels: bool = False,
 ) -> str:
     """
+    - Credits - https://www.geeksforgeeks.org/converting-image-ascii-image-python/
+    
     Creates an ascii art out of an image.
-    Credits - https://www.geeksforgeeks.org/converting-image-ascii-image-python/
 
     Args:
         image: Your image opened using the `PIL.Image` module or the image's path as `str`.
