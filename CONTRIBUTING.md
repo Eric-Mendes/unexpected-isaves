@@ -18,7 +18,7 @@ Install the package locally in your environment with the command below and code 
 ```bash
 pip install -e .[dev]
 ```
-## Gitflow
+## Git Workflow (Feature Branch)
 Whenever you want to contribute with code - whatever code it is - please make sure that you follow these rules (the same follows for documentation):
 1. Fork the project;
 2. Test your code before opening the Pull Request. Please remember to submit your new tests as well when opening the PR (if you are submitting new code);
