@@ -2,7 +2,7 @@ import json
 import os
 from contextlib import suppress
 from math import sqrt
-from typing import Tuple, Union
+from typing import Optional, Tuple, Union
 
 import numpy as np
 import pandas as pd
@@ -260,3 +260,120 @@ def to_minecraft(
     res = min([a, b], key=len)
     with open(f"{path}/data/pixelart-map/functions/load.mcfunction", "w") as file:
         file.write("\n".join(res))
+
+
+def to_ascii(
+    image: Union[Image.Image, str],
+    path: Optional[str] = None,
+    cols: int = 80,
+    scale: float = 0.43,
+    more_levels: bool = False,
+) -> str:
+    """
+    Creates an ascii art out of an image.
+    Credits - https://www.geeksforgeeks.org/converting-image-ascii-image-python/
+
+    Args:
+        image: Your image opened using the `PIL.Image` module or the image's path as `str`.
+        path: The path that you want to save your `.txt` file, if you want to save it. Otherwise the function will only return the ascii art string.
+        cols: Used for computing tile width. Defaults to `80`.
+        scale: Used for computing tile height. Defaults to `0.43` - ok for a monospaced font like Courier.
+        more_levels: When set to `True` uses more ascii characters (70). Defaults to `False` (10 ascii characters).
+
+    Returns:
+        The ascii art of the `image`.
+
+    Raises:
+        ValueError: "Image too small for specified cols."
+    """
+    # 70 levels of gray
+    gscale1 = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
+
+    # 10 levels of gray
+    gscale2 = "@%#*+=-:. "
+
+    def getAverageL(image):
+        """
+        Given PIL Image, return average value of grayscale value
+        """
+        # get image as numpy array
+        im = np.array(image)
+
+        # get shape
+        w, h = im.shape
+
+        # get average
+        return np.average(im.reshape(w * h))
+
+    # open image and convert to grayscale
+    if isinstance(image, str):
+        image = Image.open(image)
+    image = image.convert("L")
+
+    # store dimensions
+    W, H = image.size[0], image.size[1]
+
+    # compute width of tile
+    w = W / cols
+
+    # compute tile height based on aspect ratio and scale
+    h = w / scale
+
+    # compute number of rows
+    rows = int(H / h)
+
+    # check if image size is too small
+    if cols > W or rows > H:
+        raise ValueError("Image too small for specified cols.")
+
+    # ascii image is a list of character strings
+    aimg = []
+    # generate list of dimensions
+    for j in range(rows):
+        y1 = int(j * h)
+        y2 = int((j + 1) * h)
+
+        # correct last tile
+        if j == rows - 1:
+            y2 = H
+
+        # append an empty string
+        aimg.append("")
+
+        for i in range(cols):
+
+            # crop image to tile
+            x1 = int(i * w)
+            x2 = int((i + 1) * w)
+
+            # correct last tile
+            if i == cols - 1:
+                x2 = W
+
+            # crop image to extract tile
+            img = image.crop((x1, y1, x2, y2))
+
+            # get average luminance
+            avg = int(getAverageL(img))
+
+            # look up ascii char
+            if more_levels:
+                gsval = gscale1[int((avg * 69) / 255)]
+            else:
+                gsval = gscale2[int((avg * 9) / 255)]
+
+            # append ascii char to string
+            aimg[j] += gsval
+
+    if path is not None:
+        f = open(path, "w")
+
+        # write to file
+        for row in aimg:
+            f.write(row + "\n")
+
+        # cleanup
+        f.close()
+
+    # return txt image
+    return "\n".join(aimg)
