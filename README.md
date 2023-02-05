@@ -1,7 +1,9 @@
 <div id="header" align="center">
     <img src="https://user-images.githubusercontent.com/42689328/159303554-70eaea67-8840-4889-8683-b54fa7b815cb.png" alt="unexpected-isaves" width=300 />
     <h2> Unexpected image saves </h2>
-    <a href="https://badge.fury.io/py/unexpected-isaves">
+    <a href="https://badge.fury.io/py/unexpected-isaves">## [1.5.1] - 2023-02-02
+### Changed
+- Refactored `README.md`.
         <img src="https://badge.fury.io/py/unexpected-isaves.svg" alt="PyPI version"/>
     </a>
     <a href="https://pypi.org/project/unexpected-isaves/">
@@ -19,7 +21,7 @@
 </div>
 <br/>
 
-<h1> Generate images as a spreadsheet or a Minecraft pixel art using Python </h1>
+<h1> Generate images as a spreadsheet, a Minecraft pixel art, or an ascii art using Python </h1>
 
 A quick scroll through social media and you'll find very talented people making portraits out of dice, rubik's cube, in minecraft as pixel art, or even using MIDI notes on a Digital Audio Workstation (DAW). This package gives you the ability to do the same, with or without talent.
 Currently it can only generate arts using minecraft or the cells of a spreadsheet, but if you have any ideas that fit into the project's goal please [let me know](https://github.com/Eric-Mendes/unexpected-isaves/issues/10), or - even better - submit a merge request with your work!
@@ -40,6 +42,10 @@ With this package you can save any `image` on a given `path` as a
 
 - Minecraft Pixel Art Datapack:
 ![naruto-anime-python-minecraft-pixel-art-data-pack-unexpected-isaves](https://user-images.githubusercontent.com/42689328/159305299-12f8086d-0ef4-4e7a-9960-29ad777f8a7f.png)
+
+- Ascii Art:
+![capybara-ascii-art](https://user-images.githubusercontent.com/42689328/216817867-b2f30809-6ae8-46f3-87d2-6c8f95a0a761.png)
+
 
 
 ## How to use it :computer:
