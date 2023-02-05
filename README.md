@@ -1,9 +1,7 @@
 <div id="header" align="center">
     <img src="https://user-images.githubusercontent.com/42689328/159303554-70eaea67-8840-4889-8683-b54fa7b815cb.png" alt="unexpected-isaves" width=300 />
     <h2> Unexpected image saves </h2>
-    <a href="https://badge.fury.io/py/unexpected-isaves">## [1.5.1] - 2023-02-02
-### Changed
-- Refactored `README.md`.
+    <a href="https://badge.fury.io/py/unexpected-isaves">
         <img src="https://badge.fury.io/py/unexpected-isaves.svg" alt="PyPI version"/>
     </a>
     <a href="https://pypi.org/project/unexpected-isaves/">
