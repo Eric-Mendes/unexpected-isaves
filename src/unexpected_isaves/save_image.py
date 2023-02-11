@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 from contextlib import suppress
 from math import sqrt
 from typing import Optional, Tuple, Union
@@ -102,6 +103,61 @@ def to_excel(
     wb.save(path)
 
 
+def __to_minecraft_save(
+    res: list[str],
+    path: str,
+    minecraft_version: str = "1.18.2",
+) -> None:
+    # Getting the name that the image should have via the given path
+    image_name = os.path.splitext(os.path.split(path)[1])[0]
+
+    if minecraft_version >= "1.13.0" and minecraft_version <= "1.14.4":
+        datapack_version = 4
+    elif minecraft_version >= "1.15.0" and minecraft_version <= "1.16.1":
+        datapack_version = 5
+    elif minecraft_version >= "1.16.2" and minecraft_version <= "1.16.5":
+        datapack_version = 6
+    elif minecraft_version >= "1.17.0" and minecraft_version <= "1.17.1":
+        datapack_version = 7
+    elif minecraft_version >= "1.18.0" and minecraft_version <= "1.18.1":
+        datapack_version = 8
+    elif minecraft_version == "1.18.2":
+        datapack_version = 9
+    elif minecraft_version == "1.19.0":
+        datapack_version = 10
+    else:
+        raise ValueError(
+            "Unsupported minecraft_version. If you feel like this is a mistake, open an issue at https://github.com/Eric-Mendes/unexpected-isaves/issues to let us know."
+        )
+
+    pack_mcmeta = {
+        "pack": {
+            "pack_format": datapack_version,
+            "description": f"This datapack will generate the image ({image_name}) in your world",
+        }
+    }
+    load_json = {"values": ["pixelart-map:load"]}
+    tick_json = {"values": ["pixelart-map:tick"]}
+
+    # Creates - in an error proof manner - the folder structure of the datapack
+    with suppress(FileExistsError):
+        os.makedirs(f"{path}/data/minecraft/tags/functions")
+        os.makedirs(f"{path}/data/pixelart-map/functions")
+
+    with open(f"{path}/pack.mcmeta", "w") as file:
+        file.write(json.dumps(pack_mcmeta, indent=4))
+    with open(f"{path}/data/minecraft/tags/functions/load.json", "w") as file:
+        file.write(json.dumps(load_json, indent=4))
+    with open(f"{path}/data/minecraft/tags/functions/tick.json", "w") as file:
+        file.write(json.dumps(tick_json, indent=4))
+
+    with open(f"{path}/data/pixelart-map/functions/tick.mcfunction", "w") as file:
+        file.write("")
+
+    with open(f"{path}/data/pixelart-map/functions/load.mcfunction", "w") as file:
+        file.write("\n".join(res))
+
+
 def to_minecraft(
     image: Union[Image.Image, str],
     path: str,
@@ -124,7 +180,7 @@ def to_minecraft(
 
     Returns
         `None`, but outputs a datapack on the given `path`.
-    
+
     Raises
         ValueError: "Unsupported minecraft_version. If you feel like this is a mistake, open an issue at https://github.com/Eric-Mendes/unexpected-isaves/issues to let us know."
     """
@@ -156,7 +212,12 @@ def to_minecraft(
 
     # Helper function. Loads the blocks an the colors they have when looked at via map,
     # and maps the pixels to the blocks
-    blocks = json.load("blocks.json")
+    __location__ = os.path.realpath(
+        os.path.join(os.getcwd(), os.path.dirname(__file__))
+    )
+    blocks_file = open(os.path.join(__location__, "blocks.json"), "r")
+    blocks = json.load(blocks_file)
+    blocks_file.close()
 
     def to_minecraft_color(pxl):
         color = None
@@ -182,53 +243,7 @@ def to_minecraft(
         [to_minecraft_color(pixel) for pixel in row] for row in np.array(image)
     ]
 
-    # Getting the name that the image should have via the given path
-    image_name = os.path.splitext(os.path.split(path)[1])[0]
-
     df = pd.DataFrame(image_colors_processed)
-
-    # Creates - in an error proof manner - the folder structure of the datapack
-    with suppress(FileExistsError):
-        os.makedirs(f"{path}/data/minecraft/tags/functions")
-        os.makedirs(f"{path}/data/pixelart-map/functions")
-
-    if minecraft_version >= "1.13.0" and minecraft_version <= "1.14.4":
-        datapack_version = 4
-    elif minecraft_version >= "1.15.0" and minecraft_version <= "1.16.1":
-        datapack_version = 5
-    elif minecraft_version >= "1.16.2" and minecraft_version <= "1.16.5":
-        datapack_version = 6
-    elif minecraft_version >= "1.17.0" and minecraft_version <= "1.17.1":
-        datapack_version = 7
-    elif minecraft_version >= "1.18.0" and minecraft_version <= "1.18.1":
-        datapack_version = 8
-    elif minecraft_version == "1.18.2":
-        datapack_version = 9
-    elif minecraft_version == "1.19.0":
-        datapack_version = 10
-    else:
-        raise ValueError(
-            "Unsupported minecraft_version. If you feel like this is a mistake, open an issue at https://github.com/Eric-Mendes/unexpected-isaves/issues to let us know."
-        )
-
-    pack_mcmeta = {
-        "pack": {
-            "pack_format": datapack_version,
-            "description": f"This datapack will generate the image ({image_name}) in your world",
-        }
-    }
-    load_json = {"values": ["pixelart-map:load"]}
-    tick_json = {"values": ["pixelart-map:tick"]}
-
-    with open(f"{path}/pack.mcmeta", "w") as file:
-        file.write(json.dumps(pack_mcmeta, indent=4))
-    with open(f"{path}/data/minecraft/tags/functions/load.json", "w") as file:
-        file.write(json.dumps(load_json, indent=4))
-    with open(f"{path}/data/minecraft/tags/functions/tick.json", "w") as file:
-        file.write(json.dumps(tick_json, indent=4))
-
-    with open(f"{path}/data/pixelart-map/functions/tick.mcfunction", "w") as file:
-        file.write("")
 
     # Making the commands that when ran will build the image's pixel art.
     # This part's had a huge contribution from this thread: https://stackoverflow.com/questions/70512775/how-to-group-elements-in-dataframe-by-row/70546452#70546452
@@ -251,8 +266,7 @@ def to_minecraft(
         )
     )
     res = min([a, b], key=len)
-    with open(f"{path}/data/pixelart-map/functions/load.mcfunction", "w") as file:
-        file.write("\n".join(res))
+    __to_minecraft_save(res, path, minecraft_version)
 
 
 def to_ascii(
@@ -264,7 +278,7 @@ def to_ascii(
 ) -> str:
     """
     - Credits - https://www.geeksforgeeks.org/converting-image-ascii-image-python/
-    
+
     Creates an ascii art out of an image.
 
     Args:
@@ -335,7 +349,6 @@ def to_ascii(
         aimg.append("")
 
         for i in range(cols):
-
             # crop image to tile
             x1 = int(i * w)
             x2 = int((i + 1) * w)
