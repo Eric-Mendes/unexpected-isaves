@@ -13,9 +13,6 @@
     <a href="https://github.com/psf/black">
         <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"/>
     </a>
-    <a href="https://saythanks.io/to/Eric-Mendes">
-        <img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg" alt="Say Thanks!"/>
-    </a>
 </div>
 <br/>
 

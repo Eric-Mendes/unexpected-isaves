@@ -38,7 +38,6 @@ dev = ["black"]
 [project.urls]  
 "Homepage" = "https://github.com/Eric-Mendes/unexpected-isaves"
 "Bug Reports" = "https://github.com/Eric-Mendes/unexpected-isaves/issues"
-"Say Thanks!" = "https://saythanks.io/to/Eric-Mendes"
 "Source" = "https://github.com/Eric-Mendes/unexpected-isaves"
 
 [tool.setuptools]
