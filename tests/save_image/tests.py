@@ -7,14 +7,14 @@ from openpyxl import load_workbook, styles
 
 from unexpected_isaves.save_image import to_excel, to_minecraft, to_ascii
 
-img_path = "./src/tests/python-logo.png"
+IMG_PATH = "./tests/assets/python-logo.png"
 
 
 class TestToExcel(unittest.TestCase):
     def test_default(self):
         outfile_path = tempfile.mkstemp()[1] + ".xlsx"
         try:
-            to_excel(image=img_path, path=outfile_path)
+            to_excel(image=IMG_PATH, path=outfile_path)
             wb = load_workbook(outfile_path)
         finally:
             os.remove(outfile_path)
@@ -24,7 +24,7 @@ class TestToExcel(unittest.TestCase):
             os.path.join(os.getcwd(), os.path.dirname(__file__))
         )
         expected_file = open(
-            os.path.join(__location__, "to_excel_unittest_expected.json"), "r"
+            os.path.join(__location__, "fixtures/to_excel_expected.json"), "r"
         )
         expected_default = json.load(expected_file)
         expected_file.close()
@@ -43,7 +43,7 @@ class TestToExcel(unittest.TestCase):
 class TestToMinecraft(unittest.TestCase):
     @patch("unexpected_isaves.save_image.__to_minecraft_save")
     def test_default(self, mock_to_minecraft_save):
-        to_minecraft(image=img_path, path="mustnt_save", lower_image_size_by=50)
+        to_minecraft(image=IMG_PATH, path="mustnt_save", lower_image_size_by=50)
         # asset __to_minecraft_save was called
         mock_to_minecraft_save.assert_called_once()
         mock_to_minecraft_save.assert_called_with(
@@ -403,10 +403,10 @@ ascii_expected_30_cols = """@@@@@@@@#***+++****#%@@@@@@@@@
 
 class TestToASCII(unittest.TestCase):
     def test_default(self):
-        self.assertEqual(to_ascii(image=img_path), ascii_expected_default)
+        self.assertEqual(to_ascii(image=IMG_PATH), ascii_expected_default)
 
     def test_custom_cols(self):
-        self.assertEqual(to_ascii(image=img_path, cols=30), ascii_expected_30_cols)
+        self.assertEqual(to_ascii(image=IMG_PATH, cols=30), ascii_expected_30_cols)
 
 
 if __name__ == "__main__":
