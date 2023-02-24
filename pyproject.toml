@@ -5,7 +5,7 @@ description = "A Python library that paints an image on a spreadsheet, builds it
 readme = "README.md"
 requires-python = ">=3.8"
 license = {file = "LICENSE"}
-keywords = ["minecraft", "pixel", "art", "excel", "spreadsheet"]
+keywords = ["minecraft", "pixel", "art", "excel", "spreadsheet", "ascii"]
 authors = [
   {name = "Eric Mendes", email = "ericvelasco.2000@gmail.com" }
 ]
