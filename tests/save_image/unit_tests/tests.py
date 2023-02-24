@@ -3,11 +3,12 @@ import os
 import tempfile
 import unittest
 from unittest.mock import patch
+from pathlib import Path
 from openpyxl import load_workbook, styles
 
 from unexpected_isaves.save_image import to_excel, to_minecraft, to_ascii
 
-IMG_PATH = "./tests/assets/python-logo.png"
+IMG_PATH = f"{os.path.abspath(str(Path(__file__).parent.parent.parent))}/assets/python-logo.png"
 
 
 class TestToExcel(unittest.TestCase):
@@ -24,7 +25,11 @@ class TestToExcel(unittest.TestCase):
             os.path.join(os.getcwd(), os.path.dirname(__file__))
         )
         expected_file = open(
-            os.path.join(__location__, "fixtures/to_excel_expected.json"), "r"
+            os.path.join(
+                __location__,
+                f"{os.path.abspath(str(Path(__file__).parent.parent))}/fixtures/to_excel_expected.json",
+            ),
+            "r",
         )
         expected_default = json.load(expected_file)
         expected_file.close()
