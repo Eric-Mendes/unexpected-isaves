@@ -1,11 +1,11 @@
 [project]
 name = "unexpected_isaves"
-version = "2.0.3"
-description = "A Python library that paints an image on a spreadsheet, builds its pixel art in Minecraft, or makes an ascii art out of it."
+version = "2.1.0"
+description = "A Python library that paints an image on a spreadsheet, builds its pixel art in Minecraft, makes its ascii art, or makes a rubik's cube art out of it."
 readme = "README.md"
 requires-python = ">=3.8"
 license = {file = "LICENSE"}
-keywords = ["minecraft", "pixel", "art", "excel", "spreadsheet", "ascii"]
+keywords = ["minecraft", "pixel", "art", "excel", "spreadsheet", "ascii", "rubiks"]
 authors = [
   {name = "Eric Mendes", email = "ericvelasco.2000@gmail.com" }
 ]
