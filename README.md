@@ -42,8 +42,7 @@ With this package you can save any `image` on a given `path` as a
 ![capybara-python-ascii-art-unexpected-isaves](https://user-images.githubusercontent.com/42689328/216817867-b2f30809-6ae8-46f3-87d2-6c8f95a0a761.png)
 
 - Rubik's Cube:
-![apple-python-rubiks-cube-art-unexpected-isaves](#)
-
+![apple-python-rubiks-cube-art-unexpected-isaves](https://user-images.githubusercontent.com/42689328/222265597-44f4543e-6af8-4644-8b69-489b1723a837.png)
 
 ## How to use it :computer:
 First you install it in your environment like this
