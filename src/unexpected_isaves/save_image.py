@@ -1,3 +1,4 @@
+from typing import List
 import json
 import os
 from contextlib import suppress
@@ -103,7 +104,7 @@ def to_excel(
 
 
 def __to_minecraft_save(
-    res: list[str],
+    res: List[str],
     path: str,
     minecraft_version: str = "1.18.2",
 ) -> None:
