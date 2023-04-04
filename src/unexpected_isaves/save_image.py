@@ -2,7 +2,7 @@ import json
 import os
 from contextlib import suppress
 from math import sqrt
-from typing import Optional, Tuple, Union
+from typing import Optional, Tuple, Union, List
 
 import numpy as np
 import pandas as pd
