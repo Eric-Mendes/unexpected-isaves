@@ -762,7 +762,7 @@
             128,
             255
         ],
-        "blocks": "lapis_lazuli_block"
+        "blocks": ["lapis_lazuli_block"]
     },
     {
         "rgb": [
@@ -770,7 +770,7 @@
             217,
             58
         ],
-        "blocks": "emerald_block"
+        "blocks": ["emerald_block"]
     },
     {
         "rgb": [
@@ -841,7 +841,7 @@
             82,
             36
         ],
-        "blocks": "orange_terracotta"
+        "blocks": ["orange_terracotta"]
     },
     {
         "rgb": [
@@ -849,7 +849,7 @@
             87,
             108
         ],
-        "blocks": "magenta_terracotta"
+        "blocks": ["magenta_terracotta"]
     },
     {
         "rgb": [
@@ -857,7 +857,7 @@
             108,
             138
         ],
-        "blocks": "light_blue_terracotta"
+        "blocks": ["light_blue_terracotta"]
     },
     {
         "rgb": [
@@ -865,7 +865,7 @@
             133,
             36
         ],
-        "blocks": "yellow_terracotta"
+        "blocks": ["yellow_terracotta"]
     },
     {
         "rgb": [
@@ -873,7 +873,7 @@
             117,
             53
         ],
-        "blocks": "lime_terracotta"
+        "blocks": ["lime_terracotta"]
     },
     {
         "rgb": [
@@ -881,7 +881,7 @@
             77,
             78
         ],
-        "blocks": "pink_terracotta"
+        "blocks": ["pink_terracotta"]
     },
     {
         "rgb": [
@@ -911,7 +911,7 @@
             92,
             92
         ],
-        "blocks": "cyan_terracotta"
+        "blocks": ["cyan_terracotta"]
     },
     {
         "rgb": [
@@ -930,7 +930,7 @@
             62,
             92
         ],
-        "blocks": "blue_terracotta"
+        "blocks": ["blue_terracotta"]
     },
     {
         "rgb": [
@@ -950,7 +950,7 @@
             82,
             42
         ],
-        "blocks": "green_terracotta"
+        "blocks": ["green_terracotta"]
     },
     {
         "rgb": [
@@ -958,7 +958,7 @@
             60,
             46
         ],
-        "blocks": "red_terracotta"
+        "blocks": ["red_terracotta"]
     },
     {
         "rgb": [
@@ -966,7 +966,7 @@
             22,
             16
         ],
-        "blocks": "black_terracotta"
+        "blocks": ["black_terracotta"]
     },
     {
         "rgb": [
@@ -974,7 +974,7 @@
             48,
             49
         ],
-        "blocks": "crimson_nylium"
+        "blocks": ["crimson_nylium"]
     },
     {
         "rgb": [
@@ -1060,7 +1060,7 @@
             180,
             133
         ],
-        "blocks": "warped_wart_block"
+        "blocks": ["warped_wart_block"]
     },
     {
         "rgb": [
@@ -1068,7 +1068,7 @@
             100,
             100
         ],
-        "blocks": "deepslate"
+        "blocks": ["deepslate"]
     },
     {
         "rgb": [
@@ -1076,7 +1076,7 @@
             175,
             147
         ],
-        "blocks": "raw_iron_block"
+        "blocks": ["raw_iron_block"]
     },
     {
         "rgb": [
@@ -1084,6 +1084,6 @@
             167,
             150
         ],
-        "blocks": "glow_lichen"
+        "blocks": ["glow_lichen"]
     }
 ]
