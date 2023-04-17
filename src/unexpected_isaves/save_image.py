@@ -110,6 +110,8 @@ def __to_minecraft_save(
     # Getting the name that the image should have via the given path
     image_name = os.path.splitext(os.path.split(path)[1])[0]
 
+    # Minecraft version to data pack version relation can be found at https://minecraft.fandom.com/wiki/Data_pack.
+    # Feel free to help us keep updated by contributing.
     if minecraft_version >= "1.13.0" and minecraft_version <= "1.14.4":
         datapack_version = 4
     elif minecraft_version >= "1.15.0" and minecraft_version <= "1.16.1":
@@ -122,8 +124,10 @@ def __to_minecraft_save(
         datapack_version = 8
     elif minecraft_version == "1.18.2":
         datapack_version = 9
-    elif minecraft_version == "1.19.0":
+    elif minecraft_version >= "1.19.0" and minecraft_version <= "1.19.3":
         datapack_version = 10
+    elif minecraft_version == "1.19.4":
+        datapack_version = 12
     else:
         raise ValueError(
             "Unsupported minecraft_version. If you feel like this is a mistake, open an issue at https://github.com/Eric-Mendes/unexpected-isaves/issues to let us know."
