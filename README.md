@@ -71,6 +71,6 @@ Just like Minecraft, everything's better when shared and built together.
 Contributions are welcome and appreciated. Make sure to read our [guide for contributing](https://github.com/Eric-Mendes/unexpected_isaves/blob/main/CONTRIBUTING.md) and don't forget to check out our [code of conduct](https://github.com/Eric-Mendes/unexpected_isaves/blob/main/CODE_OF_CONDUCT.md).
 
 ## Into the wild
-So you've used this tool to create the most awesome art ever, and now you want to share it in your social media? Please use *#unexpected_isaves* when you post it.
+So you've used this tool to create the most awesome art ever? Please consider leaving a star on the repo. It helps a lot.
 
 Have fun!
