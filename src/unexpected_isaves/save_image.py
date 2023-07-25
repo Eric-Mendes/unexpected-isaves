@@ -128,6 +128,8 @@ def __to_minecraft_save(
         datapack_version = 10
     elif minecraft_version == "1.19.4":
         datapack_version = 12
+    elif minecraft_version == "1.20.0":
+        datapack_version = 15
     else:
         raise ValueError(
             "Unsupported minecraft_version. If you feel like this is a mistake, open an issue at https://github.com/Eric-Mendes/unexpected-isaves/issues to let us know."
