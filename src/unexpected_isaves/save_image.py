@@ -110,7 +110,7 @@ def __to_minecraft_save(
     # Getting the name that the image should have via the given path
     image_name = os.path.splitext(os.path.split(path)[1])[0]
 
-    # Minecraft version to data pack version relation can be found at https://minecraft.fandom.com/wiki/Data_pack.
+    # Minecraft version to data pack version relation can be found at https://minecraft.wiki/w/Data_pack.
     # Feel free to help us keep updated by contributing.
     if minecraft_version >= "1.13.0" and minecraft_version <= "1.14.4":
         datapack_version = 4
