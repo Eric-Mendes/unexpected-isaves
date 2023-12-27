@@ -2,29 +2,29 @@ import json
 import os
 from contextlib import suppress
 from math import sqrt
-from typing import Optional, Tuple, Union, List
+from typing import List, Optional, Tuple, Union
 
 import numpy as np
 import pandas as pd
-from openpyxl import load_workbook, styles, utils
 from PIL import Image
+
+from . import excel, rubiks
 
 
 def to_excel(
-    image: Union[Image.Image, str],
-    path: str,
+    image: Union[Image.Image, str, os.PathLike],
+    path: Union[str, os.PathLike],
     lower_image_size_by: int = 10,
     image_position: Tuple[int, int] = (0, 0),
     **spreadsheet_kwargs,
 ) -> None:
     """
-    - Added on release 0.0.1;
     - Coded originally on https://github.com/Eric-Mendes/image2excel
 
     Saves an image as a `.xlsx` file by coloring its cells each pixel's color.
 
     Args
-        image: Your image opened using the `PIL.Image` module or the image's path as `str`.
+        image: Your image opened using the `PIL.Image` module or the image's path.
         path: The path that you want to save your output file. Example: `/home/user/Documents/my_image.xlsx`.
         lower_image_size_by: A factor that the function will divide your image's dimensions by. Defaults to `10`. It is very important that you lower your image's dimensions because a big image might take the function a long time to process plus your spreadsheet will probably take a long time to load on any software that you use to open it.
         image_position: a tuple determining the position of the top leftmost pixel. Cannot have negative values. Defaults to `(0,0)`.
@@ -37,69 +37,13 @@ def to_excel(
     Returns
         `None`, but outputs a `.xlsx` file on the given `path`.
     """
-    if isinstance(image, str):
-        image = Image.open(image)
-
-    image_position_row = image_position[0]
-    image_position_col = image_position[1]
-    if image_position_row > 0:
-        image_position_row -= 1
-    if image_position_col > 0:
-        image_position_col -= 1
-    if image_position_row < 0 or image_position_col < 0:
-        raise ValueError("image_position cannot have negative values.")
-
-    image = image.convert("RGB")
-    image = image.resize(
-        (image.size[0] // lower_image_size_by, image.size[1] // lower_image_size_by)
-    )
-    # OpenPyxl colors work in a weird way
-    image_colors_processed = [
-        ["%02x%02x%02x" % tuple(item) for item in row]
-        for row in np.array(image).tolist()
-    ]
-
-    df = pd.DataFrame(image_colors_processed)
-    image_name = os.path.splitext(os.path.split(path)[1])[0]
-
-    # Saving a DataFrame where each cell has a text corresponding to the RGB color its background should be
-    df.to_excel(
+    excel.to_excel(
+        image,
         path,
-        index=False,
-        header=False,
-        startrow=image_position_row,
-        startcol=image_position_col,
+        lower_image_size_by,
+        image_position,
+        **spreadsheet_kwargs,
     )
-
-    # Loading the excel file, painting each cell with its color and saving the updates
-    wb = load_workbook(path)
-
-    ws = wb.active
-    ws.title = image_name
-
-    for row in range(1, df.shape[0] + 1):
-        for col in range(1, df.shape[1] + 1):
-            cell = ws.cell(
-                row=row + image_position_row, column=col + image_position_col
-            )
-            # Makes cells squared
-            ws.row_dimensions[row + image_position_row].height = spreadsheet_kwargs.get(
-                "row_height", 15
-            )
-            ws.column_dimensions[
-                utils.get_column_letter(col + image_position_col)
-            ].width = spreadsheet_kwargs.get("column_width", 2.3)
-
-            # Painting the cell
-            cell.fill = styles.PatternFill(
-                start_color=cell.value, end_color=cell.value, fill_type="solid"
-            )
-            if spreadsheet_kwargs.get("delete_cell_value", True):
-                cell.value = None  # Deletes the text from the cell
-
-    # Saves spreadsheet already zoomed in or out
-    ws.sheet_view.zoomScale = spreadsheet_kwargs.get("zoom_scale", 20)
-    wb.save(path)
 
 
 def __to_minecraft_save(
@@ -393,23 +337,9 @@ def to_ascii(
     return "\n".join(aimg)
 
 
-def __map_to_palette(color, palette):
-    min_dist = None
-    mapped_color = None
-
-    for clr in palette:
-        euclidean_distance = sqrt(sum([pow(p - c, 2) for p, c in zip(clr, color)]))
-
-        if min_dist is None or euclidean_distance < min_dist:
-            min_dist = euclidean_distance
-            mapped_color = clr
-
-    return mapped_color
-
-
 def to_rubiks(
-    image: Union[Image.Image, str],
-    path: str,
+    image: Union[Image.Image, str, os.PathLike],
+    path: Union[str, os.PathLike],
     lower_image_size_by: int = 10,
     **spreadsheet_kwargs,
 ) -> int:
@@ -417,7 +347,7 @@ def to_rubiks(
     Saves an image as a `.xlsx` file by mapping its colors to the closest of the standard colors of a rubik's cube, then coloring its cells accordingly.
 
     Args
-        image: Your image opened using the `PIL.Image` module or the image's path as `str`.
+        image: Your image opened using the `PIL.Image` module or the image's path.
         path: The path that you want to save your output file. Example: `/home/user/Documents/my_image.xlsx`.
         lower_image_size_by: A factor that the function will divide your image's dimensions by. Defaults to `10`. It is very important that you lower your image's dimensions because a big image might take the function a long time to process plus your spreadsheet will probably take a long time to load on any software that you use to open it.
         image_position: a tuple determining the position of the top leftmost pixel. Cannot have negative values. Defaults to `(0,0)`.
@@ -430,64 +360,4 @@ def to_rubiks(
     Returns
         An integer representing how many rubik's cubes are needed to make the generated image.
     """
-    if isinstance(image, str):
-        image = Image.open(image)
-
-    image = image.convert("RGB")
-    image = image.resize(
-        (image.size[0] // lower_image_size_by, image.size[1] // lower_image_size_by)
-    )
-    image = image.resize(
-        (int(round(image.size[0] / 3)) * 3, int(round(image.size[1] / 3)) * 3)
-    )
-    rubiks_palette = [
-        (255, 0, 0),  # red
-        (0, 255, 0),  # green
-        (0, 0, 255),  # blue
-        (255, 255, 0),  # yellow
-        (255, 255, 255),  # white
-        (255, 128, 0),  # orange
-    ]
-
-    df = pd.DataFrame(np.array(image).tolist()).applymap(
-        lambda color: "%02x%02x%02x"
-        % tuple(__map_to_palette(color, palette=rubiks_palette))
-    )
-
-    image_name = os.path.splitext(os.path.split(path)[1])[0]
-
-    # Saving a DataFrame where each cell has a text corresponding to the RGB color its background should be
-    df.to_excel(
-        path,
-        index=False,
-        header=False,
-    )
-
-    # Loading the excel file, painting each cell with its color and saving the updates
-    wb = load_workbook(path)
-
-    ws = wb.active
-    ws.title = image_name
-
-    for row in range(1, df.shape[0] + 1):
-        for col in range(1, df.shape[1] + 1):
-            cell = ws.cell(row=row, column=col)
-
-            # Makes cells squared
-            ws.row_dimensions[row].height = spreadsheet_kwargs.get("row_height", 15)
-            ws.column_dimensions[
-                utils.get_column_letter(col)
-            ].width = spreadsheet_kwargs.get("column_width", 2.3)
-
-            # Painting the cell
-            cell.fill = styles.PatternFill(
-                start_color=cell.value, end_color=cell.value, fill_type="solid"
-            )
-            if spreadsheet_kwargs.get("delete_cell_value", True):
-                cell.value = None  # Deletes the text from the cell
-
-    # Saves spreadsheet already zoomed in or out
-    ws.sheet_view.zoomScale = spreadsheet_kwargs.get("zoom_scale", 20)
-    wb.save(path)
-
-    return image.size[0] // 3 * image.size[1] // 3
+    return rubiks.to_rubiks(image, path, lower_image_size_by, **spreadsheet_kwargs)
